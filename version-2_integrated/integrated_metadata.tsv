@@ -1,0 +1,130 @@
+sample-id	spaceflight	sample_type	location	sanitization	description	Study_Group	Environment	Variety
+Q1_Fruit1_S5_L001	Space_Flight	fruit	Q1	Not Applicable	fruit from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1_Fruit2_S6_L001	Space_Flight	fruit	Q1	Not Applicable	fruit from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1_Fruit3_S7_L001	Space_Flight	fruit	Q1	Not Applicable	fruit from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1_Leaf_S1_L001	Space_Flight	leaf	Q1	Not Applicable	leaf from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1_Seed1_S8_L001	Space_Flight	seed	Q1	Sanitized	seed from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1_Seed2_S9_L001	Space_Flight	seed	Q1	Sanitized	seed from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1_Seed3_S10_L001	Space_Flight	seed	Q1	Sanitized	seed from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Stem_S16_L001	Space_Flight	stem	Q1	Not Applicable	stem from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2_Fruit1_S11_L001	Space_Flight	fruit	Q2	Not Applicable	fruit from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2_Leaf_S2_L001	Space_Flight	leaf	Q2	Not Applicable	leaf from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2_Seed1_S12_L001	Space_Flight	seed	Q2	Sanitized	seed from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Stem_S33_L001	Space_Flight	stem	Q2	Not Applicable	stem from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3_Fruit1_S13_L001	Space_Flight	fruit	Q3	Not Applicable	fruit from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3_Fruit2_S14_L001	Space_Flight	fruit	Q3	Not Applicable	fruit from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3_Fruit3_S15_L001	Space_Flight	fruit	Q3	Not Applicable	fruit from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3_Leaf_S3_L001	Space_Flight	leaf	Q3	Not Applicable	leaf from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3_Seed1_S16_L001	Space_Flight	seed	Q3	Sanitized	seed from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3_Seed2_S17_L001	Space_Flight	seed	Q3	Sanitized	seed from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3_Seed3_S18_L001	Space_Flight	seed	Q3	Sanitized	seed from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Stem_S8_L001	Space_Flight	stem	Q3	Not Applicable	stem from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4_Fruit1_S19_L001	Space_Flight	fruit	Q4	Not Applicable	fruit from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4_Fruit2_S20_L001	Space_Flight	fruit	Q4	Not Applicable	fruit from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4_Fruit3_S21_L001	Space_Flight	fruit	Q4	Not Applicable	fruit from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4_Leaf_S4_L001	Space_Flight	leaf	Q4	Not Applicable	leaf from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4_Seed1_S22_L001	Space_Flight	seed	Q4	Sanitized	seed from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4_Seed2_S23_L001	Space_Flight	seed	Q4	Sanitized	seed from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4_Seed3_S24_L001	Space_Flight	seed	Q4	Sanitized	seed from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Stem_S26_L001	Space_Flight	stem	Q4	Not Applicable	stem from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+SanSeed1_S25_L001	Space_Flight	seed	Not Applicable	Sanitized	seed from Not Applicable	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+SanSeed2_S26_L001	Space_Flight	seed	Not Applicable	Sanitized	seed from Not Applicable	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+SanSeed3_S27_L001	Space_Flight	seed	Not Applicable	Sanitized	seed from Not Applicable	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+UnsanSeed1_S28_L001	Ground_Control	seed	Not Applicable	Unsanitized	seed from Not Applicable	Ground_Seed	Terrestrial_Seed	NuMex_Trinidad_SC
+UnsanSeed2_S29_L001	Ground_Control	seed	Not Applicable	Unsanitized	seed from Not Applicable	Ground_Seed	Terrestrial_Seed	NuMex_Trinidad_SC
+UnsanSeed3_S30_L001	Ground_Control	seed	Not Applicable	Unsanitized	seed from Not Applicable	Ground_Seed	Terrestrial_Seed	NuMex_Trinidad_SC
+Q1-Arcillite1_S22_L001	Space_Flight	Arcillite	Q1	Not Applicable	Arcillite from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Arcillite2_S23_L001	Space_Flight	Arcillite	Q1	Not Applicable	Arcillite from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Arcillite3_S24_L001	Space_Flight	Arcillite	Q1	Not Applicable	Arcillite from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Arcillite4_S25_L001	Space_Flight	Arcillite	Q1	Not Applicable	Arcillite from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Rhizosphere_S21_L001	Space_Flight	Rhizosphere	Q1	Not Applicable	Rhizosphere from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Root2_S18_L001	Space_Flight	Plant Roots	Q1	Not Applicable	Plant Roots from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Root3_S19_L001	Space_Flight	Plant Roots	Q1	Not Applicable	Plant Roots from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Root4_S20_L001	Space_Flight	Plant Roots	Q1	Not Applicable	Plant Roots from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-RSJ-Root1_S17_L001	Space_Flight	Plant Roots	Q1	Not Applicable	Plant Roots from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Arcillite1_S39_L001	Space_Flight	Arcillite	Q2	Not Applicable	Arcillite from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Arcillite2_S40_L001	Space_Flight	Arcillite	Q2	Not Applicable	Arcillite from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Arcillite3_S41_L001	Space_Flight	Arcillite	Q2	Not Applicable	Arcillite from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Arcillite4_S42_L001	Space_Flight	Arcillite	Q2	Not Applicable	Arcillite from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Rhizosphere_S38_L001	Space_Flight	Rhizosphere	Q2	Not Applicable	Rhizosphere from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Root2_S35_L001	Space_Flight	Plant Roots	Q2	Not Applicable	Plant Roots from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Root3_S36_L001	Space_Flight	Plant Roots	Q2	Not Applicable	Plant Roots from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Root4_S37_L001	Space_Flight	Plant Roots	Q2	Not Applicable	Plant Roots from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-RSJ-Root1_S34_L001	Space_Flight	Plant Roots	Q2	Not Applicable	Plant Roots from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Water_S43_L001	Space_Flight	Water	Q2	Not Applicable	Water from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Arcillite1_S14_L001	Space_Flight	Arcillite	Q3	Not Applicable	Arcillite from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Arcillite2_S15_L001	Space_Flight	Arcillite	Q3	Not Applicable	Arcillite from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Arcillite3_S16_L001	Space_Flight	Arcillite	Q3	Not Applicable	Arcillite from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Arcillite4_S17_L001	Space_Flight	Arcillite	Q3	Not Applicable	Arcillite from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Rhizosphere_S13_L001	Space_Flight	Rhizosphere	Q3	Not Applicable	Rhizosphere from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Root1_S9_L001	Space_Flight	Plant Roots	Q3	Not Applicable	Plant Roots from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Root2_S10_L001	Space_Flight	Plant Roots	Q3	Not Applicable	Plant Roots from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Root3_S11_L001	Space_Flight	Plant Roots	Q3	Not Applicable	Plant Roots from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Root4_S12_L001	Space_Flight	Plant Roots	Q3	Not Applicable	Plant Roots from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Water_S18_L001	Space_Flight	Water	Q3	Not Applicable	Water from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Arcillite1_S32_L001	Space_Flight	Arcillite	Q4	Not Applicable	Arcillite from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Arcillite2_S33_L001	Space_Flight	Arcillite	Q4	Not Applicable	Arcillite from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Arcillite3_S34_L001	Space_Flight	Arcillite	Q4	Not Applicable	Arcillite from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Arcillite4_S35_L001	Space_Flight	Arcillite	Q4	Not Applicable	Arcillite from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Rhizosphere_S31_L001	Space_Flight	Rhizosphere	Q4	Not Applicable	Rhizosphere from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Root1_S27_L001	Space_Flight	Plant Roots	Q4	Not Applicable	Plant Roots from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Root2_S28_L001	Space_Flight	Plant Roots	Q4	Not Applicable	Plant Roots from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Root3_S29_L001	Space_Flight	Plant Roots	Q4	Not Applicable	Plant Roots from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Root4_S30_L001	Space_Flight	Plant Roots	Q4	Not Applicable	Plant Roots from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Water_S36_L001	Space_Flight	Water	Q4	Not Applicable	Water from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-1-Swab1_S1_L001	Space_Flight	Swab	Q1	Not Applicable	Swab from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-1-Swab2_S2_L001	Space_Flight	Swab	Q1	Not Applicable	Swab from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Foam1_S13_L001	Space_Flight	Foam	Q1	Not Applicable	Foam from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Foam2_S14_L001	Space_Flight	Foam	Q1	Not Applicable	Foam from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Foam3_S15_L001	Space_Flight	Foam	Q1	Not Applicable	Foam from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Wick1_S9_L001	Space_Flight	Wick	Q1	Not Applicable	Wick from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Wick2_S10_L001	Space_Flight	Wick	Q1	Not Applicable	Wick from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Wick3_S11_L001	Space_Flight	Wick	Q1	Not Applicable	Wick from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q1-Wick4_S12_L001	Space_Flight	Wick	Q1	Not Applicable	Wick from Q1	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-1-Swab3_S3_L001	Space_Flight	Swab	Q2	Not Applicable	Swab from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-1-Swab4_S4_L001	Space_Flight	Swab	Q2	Not Applicable	Swab from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Foam1_S30_L001	Space_Flight	Foam	Q2	Not Applicable	Foam from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Foam2_S31_L001	Space_Flight	Foam	Q2	Not Applicable	Foam from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Foam3_S32_L001	Space_Flight	Foam	Q2	Not Applicable	Foam from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Wick1_S26_L001	Space_Flight	Wick	Q2	Not Applicable	Wick from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Wick2_S27_L001	Space_Flight	Wick	Q2	Not Applicable	Wick from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Wick3_S28_L001	Space_Flight	Wick	Q2	Not Applicable	Wick from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q2-Wick4_S29_L001	Space_Flight	Wick	Q2	Not Applicable	Wick from Q2	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-1-Swab5_S5_L001	Space_Flight	Swab	Q3	Not Applicable	Swab from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-1-Swab6_S6_L001	Space_Flight	Swab	Q3	Not Applicable	Swab from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Foam1_S5_L001	Space_Flight	Foam	Q3	Not Applicable	Foam from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Foam2_S6_L001	Space_Flight	Foam	Q3	Not Applicable	Foam from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Foam3_S7_L001	Space_Flight	Foam	Q3	Not Applicable	Foam from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Wick1_S1_L001	Space_Flight	Wick	Q3	Not Applicable	Wick from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Wick2_S2_L001	Space_Flight	Wick	Q3	Not Applicable	Wick from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Wick3_S3_L001	Space_Flight	Wick	Q3	Not Applicable	Wick from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q3-Wick4_S4_L001	Space_Flight	Wick	Q3	Not Applicable	Wick from Q3	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-1-Swab7_S7_L001	Space_Flight	Swab	Q4	Not Applicable	Swab from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-1-Swab8_S8_L001	Space_Flight	Swab	Q4	Not Applicable	Swab from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Foam1_S23_L001	Space_Flight	Foam	Q4	Not Applicable	Foam from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Foam2_S24_L001	Space_Flight	Foam	Q4	Not Applicable	Foam from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Foam3_S25_L001	Space_Flight	Foam	Q4	Not Applicable	Foam from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Wick1_S19_L001	Space_Flight	Wick	Q4	Not Applicable	Wick from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Wick2_S20_L001	Space_Flight	Wick	Q4	Not Applicable	Wick from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Wick3_S21_L001	Space_Flight	Wick	Q4	Not Applicable	Wick from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Q4-Wick4_S22_L001	Space_Flight	Wick	Q4	Not Applicable	Wick from Q4	Space_Flight	Space_Hydroponic	NuMex_Trinidad_SC
+Terrestrial_SRR30151803	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY39	Terrestrial_Soil	Terrestrial_Field	XY39
+Terrestrial_SRR30151805	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY21	Terrestrial_Soil	Terrestrial_Field	XY21
+Terrestrial_SRR30151806	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY21	Terrestrial_Soil	Terrestrial_Field	XY21
+Terrestrial_SRR30151840	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY6	Terrestrial_Soil	Terrestrial_Field	XY6
+Terrestrial_SRR30151804	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY21	Terrestrial_Soil	Terrestrial_Field	XY21
+Terrestrial_SRR30151829	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY6	Terrestrial_Soil	Terrestrial_Field	XY6
+Terrestrial_SRR30151831	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY42	Terrestrial_Soil	Terrestrial_Field	XY42
+Terrestrial_SRR30151833	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY42	Terrestrial_Soil	Terrestrial_Field	XY42
+Terrestrial_SRR30151835	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY40	Terrestrial_Soil	Terrestrial_Field	XY40
+Terrestrial_SRR30151836	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY40	Terrestrial_Soil	Terrestrial_Field	XY40
+Terrestrial_SRR30151837	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY40	Terrestrial_Soil	Terrestrial_Field	XY40
+Terrestrial_SRR30151838	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY39	Terrestrial_Soil	Terrestrial_Field	XY39
+Terrestrial_SRR30151839	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY39	Terrestrial_Soil	Terrestrial_Field	XY39
+Terrestrial_SRR30151841	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY6	Terrestrial_Soil	Terrestrial_Field	XY6
+Terrestrial_SRR30151802	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY39	Terrestrial_Soil	Terrestrial_Field	XY39
+Terrestrial_SRR30151807	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY21	Terrestrial_Soil	Terrestrial_Field	XY21
+Terrestrial_SRR30151818	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY6	Terrestrial_Soil	Terrestrial_Field	XY6
+Terrestrial_SRR30151830	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY42	Terrestrial_Soil	Terrestrial_Field	XY42
+Terrestrial_SRR30151832	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY42	Terrestrial_Soil	Terrestrial_Field	XY42
+Terrestrial_SRR30151834	Ground_Control	Rhizosphere	Earth_Organic_Farm	Not Applicable	Terrestrial Soil from XY40	Terrestrial_Soil	Terrestrial_Field	XY40

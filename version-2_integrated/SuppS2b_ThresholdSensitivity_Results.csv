@@ -1,0 +1,7 @@
+r_threshold,Group,n_edges,Top_Hub,Hub_Degree,Rhodanobacter_Degree,R_targeted,R_random,Fragility
+0.3,Space_Flight,25,Burkholderia-Caballeronia-Paraburkholderia,7,0,0.2125,0.345,1.6236
+0.3,Terrestrial_Soil,21,Rhodanobacter,8,8,0.2,0.3585,1.7925
+0.4,Space_Flight,16,Mesorhizobium,6,0,0.1625,0.2665,1.6398
+0.4,Terrestrial_Soil,21,Rhodanobacter,8,8,0.2,0.3585,1.7925
+0.5,Space_Flight,7,Mesorhizobium,4,0,0.1333,0.2078,1.5585
+0.5,Terrestrial_Soil,15,Rhodanobacter,6,6,0.175,0.3242,1.8524

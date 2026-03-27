@@ -1,0 +1,3 @@
+Group,Nodes,Edges,Density,Avg_Degree,Negative_Edges
+Space Flight,15,16,0.1524,2.13,3
+Terrestrial Soil,15,21,0.2,2.8,9

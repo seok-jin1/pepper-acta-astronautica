@@ -1,0 +1,110 @@
+sample-id	spaceflight	sample_type	location	sanitization	description
+Q1_Fruit1	Space_Flight	fruit	Q1	Not Applicable	fruit from Q1
+Q1_Fruit2	Space_Flight	fruit	Q1	Not Applicable	fruit from Q1
+Q1_Fruit3	Space_Flight	fruit	Q1	Not Applicable	fruit from Q1
+Q1_Leaf	Space_Flight	leaf	Q1	Not Applicable	leaf from Q1
+Q1_Seed1	Space_Flight	seed	Q1	Sanitized	seed from Q1
+Q1_Seed2	Space_Flight	seed	Q1	Sanitized	seed from Q1
+Q1_Seed3	Space_Flight	seed	Q1	Sanitized	seed from Q1
+Q1-Stem	Space_Flight	stem	Q1	Not Applicable	stem from Q1
+Q2_Fruit1	Space_Flight	fruit	Q2	Not Applicable	fruit from Q2
+Q2_Leaf	Space_Flight	leaf	Q2	Not Applicable	leaf from Q2
+Q2_Seed1	Space_Flight	seed	Q2	Sanitized	seed from Q2
+Q2-Stem	Space_Flight	stem	Q2	Not Applicable	stem from Q2
+Q3_Fruit1	Space_Flight	fruit	Q3	Not Applicable	fruit from Q3
+Q3_Fruit2	Space_Flight	fruit	Q3	Not Applicable	fruit from Q3
+Q3_Fruit3	Space_Flight	fruit	Q3	Not Applicable	fruit from Q3
+Q3_Leaf	Space_Flight	leaf	Q3	Not Applicable	leaf from Q3
+Q3_Seed1	Space_Flight	seed	Q3	Sanitized	seed from Q3
+Q3_Seed2	Space_Flight	seed	Q3	Sanitized	seed from Q3
+Q3_Seed3	Space_Flight	seed	Q3	Sanitized	seed from Q3
+Q3-Stem	Space_Flight	stem	Q3	Not Applicable	stem from Q3
+Q4_Fruit1	Space_Flight	fruit	Q4	Not Applicable	fruit from Q4
+Q4_Fruit2	Space_Flight	fruit	Q4	Not Applicable	fruit from Q4
+Q4_Fruit3	Space_Flight	fruit	Q4	Not Applicable	fruit from Q4
+Q4_Leaf	Space_Flight	leaf	Q4	Not Applicable	leaf from Q4
+Q4_Seed1	Space_Flight	seed	Q4	Sanitized	seed from Q4
+Q4_Seed2	Space_Flight	seed	Q4	Sanitized	seed from Q4
+Q4_Seed3	Space_Flight	seed	Q4	Sanitized	seed from Q4
+Q4-Stem	Space_Flight	stem	Q4	Not Applicable	stem from Q4
+SanSeed1	Space_Flight	seed	Not Applicable	Sanitized	seed from Not Applicable
+SanSeed2	Space_Flight	seed	Not Applicable	Sanitized	seed from Not Applicable
+SanSeed3	Space_Flight	seed	Not Applicable	Sanitized	seed from Not Applicable
+UnsanSeed1	Ground_Control	seed	Not Applicable	Unsanitized	seed from Not Applicable
+UnsanSeed2	Ground_Control	seed	Not Applicable	Unsanitized	seed from Not Applicable
+UnsanSeed3	Ground_Control	seed	Not Applicable	Unsanitized	seed from Not Applicable
+Q1-Arcillite1	Space_Flight	Arcillite	Q1	Not Applicable	Arcillite from Q1
+Q1-Arcillite2	Space_Flight	Arcillite	Q1	Not Applicable	Arcillite from Q1
+Q1-Arcillite3	Space_Flight	Arcillite	Q1	Not Applicable	Arcillite from Q1
+Q1-Arcillite4	Space_Flight	Arcillite	Q1	Not Applicable	Arcillite from Q1
+Q1-Rhizosphere	Space_Flight	Rhizosphere	Q1	Not Applicable	Rhizosphere from Q1
+Q1-Root2	Space_Flight	Plant Roots	Q1	Not Applicable	Plant Roots from Q1
+Q1-Root3	Space_Flight	Plant Roots	Q1	Not Applicable	Plant Roots from Q1
+Q1-Root4	Space_Flight	Plant Roots	Q1	Not Applicable	Plant Roots from Q1
+Q1-RSJ-Root1	Space_Flight	Plant Roots	Q1	Not Applicable	Plant Roots from Q1
+Q2-Arcillite1	Space_Flight	Arcillite	Q2	Not Applicable	Arcillite from Q2
+Q2-Arcillite2	Space_Flight	Arcillite	Q2	Not Applicable	Arcillite from Q2
+Q2-Arcillite3	Space_Flight	Arcillite	Q2	Not Applicable	Arcillite from Q2
+Q2-Arcillite4	Space_Flight	Arcillite	Q2	Not Applicable	Arcillite from Q2
+Q2-Rhizosphere	Space_Flight	Rhizosphere	Q2	Not Applicable	Rhizosphere from Q2
+Q2-Root2	Space_Flight	Plant Roots	Q2	Not Applicable	Plant Roots from Q2
+Q2-Root3	Space_Flight	Plant Roots	Q2	Not Applicable	Plant Roots from Q2
+Q2-Root4	Space_Flight	Plant Roots	Q2	Not Applicable	Plant Roots from Q2
+Q2-RSJ-Root1	Space_Flight	Plant Roots	Q2	Not Applicable	Plant Roots from Q2
+Q2-Water	Space_Flight	Water	Q2	Not Applicable	Water from Q2
+Q3-Arcillite1	Space_Flight	Arcillite	Q3	Not Applicable	Arcillite from Q3
+Q3-Arcillite2	Space_Flight	Arcillite	Q3	Not Applicable	Arcillite from Q3
+Q3-Arcillite3	Space_Flight	Arcillite	Q3	Not Applicable	Arcillite from Q3
+Q3-Arcillite4	Space_Flight	Arcillite	Q3	Not Applicable	Arcillite from Q3
+Q3-Rhizosphere	Space_Flight	Rhizosphere	Q3	Not Applicable	Rhizosphere from Q3
+Q3-Root1	Space_Flight	Plant Roots	Q3	Not Applicable	Plant Roots from Q3
+Q3-Root2	Space_Flight	Plant Roots	Q3	Not Applicable	Plant Roots from Q3
+Q3-Root3	Space_Flight	Plant Roots	Q3	Not Applicable	Plant Roots from Q3
+Q3-Root4	Space_Flight	Plant Roots	Q3	Not Applicable	Plant Roots from Q3
+Q3-Water	Space_Flight	Water	Q3	Not Applicable	Water from Q3
+Q4-Arcillite1	Space_Flight	Arcillite	Q4	Not Applicable	Arcillite from Q4
+Q4-Arcillite2	Space_Flight	Arcillite	Q4	Not Applicable	Arcillite from Q4
+Q4-Arcillite3	Space_Flight	Arcillite	Q4	Not Applicable	Arcillite from Q4
+Q4-Arcillite4	Space_Flight	Arcillite	Q4	Not Applicable	Arcillite from Q4
+Q4-Rhizosphere	Space_Flight	Rhizosphere	Q4	Not Applicable	Rhizosphere from Q4
+Q4-Root1	Space_Flight	Plant Roots	Q4	Not Applicable	Plant Roots from Q4
+Q4-Root2	Space_Flight	Plant Roots	Q4	Not Applicable	Plant Roots from Q4
+Q4-Root3	Space_Flight	Plant Roots	Q4	Not Applicable	Plant Roots from Q4
+Q4-Root4	Space_Flight	Plant Roots	Q4	Not Applicable	Plant Roots from Q4
+Q4-Water	Space_Flight	Water	Q4	Not Applicable	Water from Q4
+Q1-1-Swab1	Space_Flight	Swab	Q1	Not Applicable	Swab from Q1
+Q1-1-Swab2	Space_Flight	Swab	Q1	Not Applicable	Swab from Q1
+Q1-Foam1	Space_Flight	Foam	Q1	Not Applicable	Foam from Q1
+Q1-Foam2	Space_Flight	Foam	Q1	Not Applicable	Foam from Q1
+Q1-Foam3	Space_Flight	Foam	Q1	Not Applicable	Foam from Q1
+Q1-Wick1	Space_Flight	Wick	Q1	Not Applicable	Wick from Q1
+Q1-Wick2	Space_Flight	Wick	Q1	Not Applicable	Wick from Q1
+Q1-Wick3	Space_Flight	Wick	Q1	Not Applicable	Wick from Q1
+Q1-Wick4	Space_Flight	Wick	Q1	Not Applicable	Wick from Q1
+Q2-1-Swab3	Space_Flight	Swab	Q2	Not Applicable	Swab from Q2
+Q2-1-Swab4	Space_Flight	Swab	Q2	Not Applicable	Swab from Q2
+Q2-Foam1	Space_Flight	Foam	Q2	Not Applicable	Foam from Q2
+Q2-Foam2	Space_Flight	Foam	Q2	Not Applicable	Foam from Q2
+Q2-Foam3	Space_Flight	Foam	Q2	Not Applicable	Foam from Q2
+Q2-Wick1	Space_Flight	Wick	Q2	Not Applicable	Wick from Q2
+Q2-Wick2	Space_Flight	Wick	Q2	Not Applicable	Wick from Q2
+Q2-Wick3	Space_Flight	Wick	Q2	Not Applicable	Wick from Q2
+Q2-Wick4	Space_Flight	Wick	Q2	Not Applicable	Wick from Q2
+Q3-1-Swab5	Space_Flight	Swab	Q3	Not Applicable	Swab from Q3
+Q3-1-Swab6	Space_Flight	Swab	Q3	Not Applicable	Swab from Q3
+Q3-Foam1	Space_Flight	Foam	Q3	Not Applicable	Foam from Q3
+Q3-Foam2	Space_Flight	Foam	Q3	Not Applicable	Foam from Q3
+Q3-Foam3	Space_Flight	Foam	Q3	Not Applicable	Foam from Q3
+Q3-Wick1	Space_Flight	Wick	Q3	Not Applicable	Wick from Q3
+Q3-Wick2	Space_Flight	Wick	Q3	Not Applicable	Wick from Q3
+Q3-Wick3	Space_Flight	Wick	Q3	Not Applicable	Wick from Q3
+Q3-Wick4	Space_Flight	Wick	Q3	Not Applicable	Wick from Q3
+Q4-1-Swab7	Space_Flight	Swab	Q4	Not Applicable	Swab from Q4
+Q4-1-Swab8	Space_Flight	Swab	Q4	Not Applicable	Swab from Q4
+Q4-Foam1	Space_Flight	Foam	Q4	Not Applicable	Foam from Q4
+Q4-Foam2	Space_Flight	Foam	Q4	Not Applicable	Foam from Q4
+Q4-Foam3	Space_Flight	Foam	Q4	Not Applicable	Foam from Q4
+Q4-Wick1	Space_Flight	Wick	Q4	Not Applicable	Wick from Q4
+Q4-Wick2	Space_Flight	Wick	Q4	Not Applicable	Wick from Q4
+Q4-Wick3	Space_Flight	Wick	Q4	Not Applicable	Wick from Q4
+Q4-Wick4	Space_Flight	Wick	Q4	Not Applicable	Wick from Q4
