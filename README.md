@@ -62,18 +62,18 @@ This repository contains the complete bioinformatics pipeline used in the study.
 ├── 03_sync_ids.py                    # Synchronize sample IDs across datasets
 ├── 04_fix_ids.py                     # Fix sample ID formatting issues
 ├── 05_qiime2_pipeline.sh             # Full QIIME2 amplicon processing pipeline
-├── 06_supp_figures.py                # → Fig1B_Taxa_Barplot.png/.pdf  [Fig 1b]
-├── 07_picrust2_analysis.py           # → Fig1C_Functional_Pathways.png  [Fig 1c]
-├── 08_taxon_function_corr.py         # → Fig2D_Taxon_Function_Correlation.png/.pdf  [Fig 2d]
-├── 09_network_analysis.py            # → Fig2E_Network.png/.pdf  [Fig 2e]
-├── 10_supp_faith_pd.py               # → version-2_integrated/SuppS1_FaithPD.png/.pdf  [Supp Fig S1]
-├── 11_supp_temporal.py               # → version-2_integrated/SuppS3_Temporal_Q1_Q4.png/.pdf  [Supp Fig S3]
-├── 12_faprotax_analysis.py           # → Fig2A_FAPROTAX_Log2FC.png/.pdf  [Fig 2a]
-├── 13_bnti_rcbray_analysis.R         # → SuppS4_BNTI_RCbray.png/.pdf  [Supp Fig S4]
-├── 14_functional_redundancy.py       # → Fig2C_FunctionalRedundancy.png/.pdf  [Fig 2c]
-├── 15_permanova.R                    # → SuppS2_PERMANOVA.png/.pdf  [Supp Fig S2]
-├── 16_ncycle_pgp_specificity.py      # → Fig2B_NCycle_PGP.png/.pdf  [Fig 2b]
-├── 17_network_threshold_sensitivity.py # → SuppS5_NetworkSensitivity.png/.pdf  [Supp Fig S5]
+├── 06_supp_figures.py                # → Fig1B_Taxa_Barplot.png/.pdf  [Dropped from Current Biology]
+├── 07_picrust2_analysis.py           # → SuppS1b_PICRUSt2_Pathways.png/.pdf  [Supp Fig S1b]
+├── 08_taxon_function_corr.py         # → SuppS2a_TaxonFunction.png/.pdf  [Supp Fig S2a]
+├── 09_network_analysis.py            # → Fig1e_Network.png/.pdf  [Fig 1e]
+├── 10_supp_faith_pd.py               # → SuppS1a_FaithPD.png/.pdf  [Supp Fig S1a]
+├── 11_supp_temporal.py               # → SuppS1d_Temporal.png/.pdf  [Supp Fig S1d]
+├── 12_faprotax_analysis.py           # → Fig1b_FAPROTAX_Log2FC.png/.pdf  [Fig 1b]
+├── 13_bnti_rcbray_analysis.R         # → SuppS2c_BNTI_RCbray.png/.pdf  [Supp Fig S2c]
+├── 14_functional_redundancy.py       # → Fig1d_FunctionalRedundancy.png/.pdf  [Fig 1d]
+├── 15_permanova.R                    # → SuppS1c_PERMANOVA.png/.pdf  [Supp Fig S1c]
+├── 16_ncycle_pgp_specificity.py      # → Fig1c_NCycle_Heatmap.png/.pdf  [Fig 1c]
+├── 17_network_threshold_sensitivity.py # → SuppS2b_ThresholdSensitivity.png/.pdf  [Supp Fig S2b]
 ├── rename_r_outputs.sh               # Copy R outputs to current_biology/ naming
 │
 ├── current_biology/                   # Current Biology Correspondence outputs
@@ -204,36 +204,36 @@ Pipeline steps (in order):
 ### Steps 4–11: Figure Scripts (run in order)
 
 ```bash
-python 06_supp_figures.py        # Fig 1b — phylum barplot
-python 07_picrust2_analysis.py   # Fig 1c — MetaCyc pathway Log₂FC
-python 08_taxon_function_corr.py # Fig 2d — taxon–function heatmap
-python 09_network_analysis.py    # Fig 2e — co-occurrence network
-python 10_supp_faith_pd.py       # Supp Fig S1 — Faith's PD
+python 06_supp_figures.py        # Dropped from Current Biology — phylum barplot
+python 07_picrust2_analysis.py   # Supp Fig S1b — MetaCyc pathway Log₂FC
+python 08_taxon_function_corr.py # Supp Fig S2a — taxon–function heatmap
+python 09_network_analysis.py    # Fig 1e — co-occurrence network
+python 10_supp_faith_pd.py       # Supp Fig S1a — Faith's PD
 
 # Export rooted tree first (required for scripts 11 and 13):
 qiime tools export \
   --input-path version-2_integrated/rooted-tree.qza \
   --output-path version-2_integrated/exported_tree
 
-python 11_supp_temporal.py       # Supp Fig S3 — Q1–Q4 temporal
+python 11_supp_temporal.py       # Supp Fig S1d — Q1–Q4 temporal
 
-# Fig 2a: FAPROTAX functional trait annotation
+# Fig 1b: FAPROTAX functional trait annotation
 # Requires FAPROTAX 1.2.12 at /home/laugh/pepper/FAPROTAX_1.2.12/
 python 12_faprotax_analysis.py
 
-# Supp Fig S4: βNTI/RCbray community assembly null model (~10–30 min)
+# Supp Fig S2c: βNTI/RCbray community assembly null model (~10–30 min)
 Rscript 13_bnti_rcbray_analysis.R
 
-# Fig 2c: Functional redundancy
+# Fig 1d: Functional redundancy
 python 14_functional_redundancy.py
 
-# Supp Fig S2: PERMANOVA + subsampling validation (1000 iterations, ~5–10 min)
+# Supp Fig S1c: PERMANOVA + subsampling validation (1000 iterations, ~5–10 min)
 Rscript 15_permanova.R
 
-# Fig 2b: N-cycle completeness + PGP specificity
+# Fig 1c: N-cycle completeness + PGP specificity
 python 16_ncycle_pgp_specificity.py
 
-# Supp Fig S5: Network threshold sensitivity (|r| = 0.3 / 0.4 / 0.5)
+# Supp Fig S2b: Network threshold sensitivity (|r| = 0.3 / 0.4 / 0.5)
 python 17_network_threshold_sensitivity.py
 ```
 
@@ -247,23 +247,22 @@ All files in `version-2_integrated/` unless otherwise noted. Filenames are prefi
 
 | Figure | Script | Figure output | Data output |
 |--------|--------|---------------|-------------|
-| **Fig 1b** | `06_supp_figures.py` | `Fig1B_Taxa_Barplot.png/.pdf` | — |
-| **Fig 1c** | `07_picrust2_analysis.py` | `Fig1C_Functional_Pathways.png` | — |
-| **Fig 2a** | `12_faprotax_analysis.py` | `Fig2A_FAPROTAX_Log2FC.png/.pdf` | `FAPROTAX_functional_table.tsv`<br>`FAPROTAX_group_comparison.csv`<br>`FAPROTAX_key_functions.csv`<br>`FAPROTAX_report.txt` |
-| **Fig 2b** | `16_ncycle_pgp_specificity.py` | `Fig2B_NCycle_PGP.png/.pdf` | `Fig2B_NCycle_Completeness_Results.csv`<br>`Fig2B_NCycle_Completeness_Summary.csv`<br>`Fig2B_PGP_Specificity_Results.csv`<br>`Fig2B_PGP_Specificity_Summary.csv` |
-| **Fig 2c** | `14_functional_redundancy.py` | `Fig2C_FunctionalRedundancy.png/.pdf` | `Fig2C_Functional_Redundancy_Results.csv`<br>`Fig2C_Functional_Redundancy_Summary.csv` |
-| **Fig 2d** | `08_taxon_function_corr.py` | `Fig2D_Taxon_Function_Correlation.png/.pdf` | — |
-| **Fig 2e** | `09_network_analysis.py` | `Fig2E_Network.png/.pdf` | `Fig2E_Keystone_Genus_Comparison.csv`<br>`Fig2E_Network_Genus_Metrics.csv` |
+| **Fig 1b** | `12_faprotax_analysis.py` | `Fig1b_FAPROTAX_Log2FC.png/.pdf` | `FAPROTAX_functional_table.tsv`<br>`FAPROTAX_group_comparison.csv`<br>`FAPROTAX_key_functions.csv`<br>`FAPROTAX_report.txt` |
+| **Fig 1c** | `16_ncycle_pgp_specificity.py` | `Fig1c_NCycle_Heatmap.png/.pdf` | `Fig1c_NCycle_Completeness_Results.csv`<br>`Fig1c_NCycle_Completeness_Summary.csv`<br>`Fig1c_PGP_Specificity_Results.csv`<br>`Fig1c_PGP_Specificity_Summary.csv` |
+| **Fig 1d** | `14_functional_redundancy.py` | `Fig1d_FunctionalRedundancy.png/.pdf` | `Fig1d_Functional_Redundancy_Results.csv`<br>`Fig1d_Functional_Redundancy_Summary.csv` |
+| **Fig 1e** | `09_network_analysis.py` | `Fig1e_Network.png/.pdf` | `Fig1e_Keystone_Genus_Comparison.csv`<br>`Fig1e_Network_Genus_Metrics.csv` |
 
 ### Supplementary Figures
 
 | Supp Fig | Script | Figure output | Data output |
 |----------|--------|---------------|-------------|
-| **S1** | `10_supp_faith_pd.py` | `SuppS1_FaithPD.png/.pdf` | — |
-| **S2** | `15_permanova.R` | `SuppS2_PERMANOVA.png/.pdf` | `SuppS2_PERMANOVA_results.csv`<br>`SuppS2_PERMANOVA_subsampling.csv` |
-| **S3** | `11_supp_temporal.py` | `SuppS3_Temporal_Q1_Q4.png/.pdf` | — |
-| **S4** | `13_bnti_rcbray_analysis.R` | `SuppS4_BNTI_RCbray.png/.pdf` | `SuppS4_BNTI_RCbray_results.csv`<br>`SuppS4_BNTI_RCbray_summary.csv` |
-| **S5** | `17_network_threshold_sensitivity.py` | `SuppS5_NetworkSensitivity.png/.pdf` | `SuppS5_NetworkSensitivity_Results.csv` |
+| **S1a** | `10_supp_faith_pd.py` | `SuppS1a_FaithPD.png/.pdf` | — |
+| **S1b** | `07_picrust2_analysis.py` | `SuppS1b_PICRUSt2_Pathways.png/.pdf` | — |
+| **S1c** | `15_permanova.R` | `SuppS1c_PERMANOVA.png/.pdf` | `SuppS1c_PERMANOVA_results.csv`<br>`SuppS1c_PERMANOVA_subsampling.csv` |
+| **S1d** | `11_supp_temporal.py` | `SuppS1d_Temporal.png/.pdf` | — |
+| **S2a** | `08_taxon_function_corr.py` | `SuppS2a_TaxonFunction.png/.pdf` | — |
+| **S2b** | `17_network_threshold_sensitivity.py` | `SuppS2b_ThresholdSensitivity.png/.pdf` | `SuppS2b_ThresholdSensitivity_Results.csv` |
+| **S2c** | `13_bnti_rcbray_analysis.R` | `SuppS2c_BNTI_RCbray.png/.pdf` | `SuppS2c_BNTI_RCbray_results.csv`<br>`SuppS2c_BNTI_RCbray_summary.csv` |
 
 ---
 
@@ -313,11 +312,11 @@ Scripts output individual panels to `current_biology/`. Panels are combined manu
 | **Fig 1a** | Overview schematic | — | Conceptual diagram |
 | **Fig 1b** | Phylum barplot | `06_supp_figures.py` | Proteobacteria shift |
 | **Fig 1c** | PICRUSt2 Log₂FC | `07_picrust2_analysis.py` | Nitrifier denitrification −11.5 |
-| **Fig 2a** | FAPROTAX Log₂FC barplot | `12_faprotax_analysis.py` | Nitrification Log₂FC = −10.68 |
-| **Fig 2b** | N-cycle step presence heatmap | `16_ncycle_pgp_specificity.py` | Space 73% vs. Terrestrial 100% |
-| **Fig 2c** | Functional redundancy barplot | `14_functional_redundancy.py` | Nitrification 0.20 vs. 4.80 genera |
-| **Fig 2d** | Taxon–function heatmap | `08_taxon_function_corr.py` | Rhodanobacter–nitrification correlation |
-| **Fig 2e** | Co-occurrence network | `09_network_analysis.py` | Rhodanobacter hub collapse |
+| **Fig 1b** | FAPROTAX Log₂FC barplot | `12_faprotax_analysis.py` | Nitrification Log₂FC = −10.68 |
+| **Fig 1c** | N-cycle step presence heatmap | `16_ncycle_pgp_specificity.py` | Space 73% vs. Terrestrial 100% |
+| **Fig 1d** | Functional redundancy barplot | `14_functional_redundancy.py` | Nitrification 0.20 vs. 4.80 genera |
+| **Supp S2a** | Taxon–function heatmap | `08_taxon_function_corr.py` | Rhodanobacter–nitrification correlation |
+| **Fig 1e** | Co-occurrence network | `09_network_analysis.py` | Rhodanobacter hub collapse |
 
 ### Supplementary Figures
 
