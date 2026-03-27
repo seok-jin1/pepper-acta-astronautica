@@ -2,17 +2,17 @@
 # ISS Chile Pepper Microbiome - .gitignore
 # ==========================================
 
-# Manuscript files
-PLPHYS-S-26-00532 (2).pdf
-Supplementary Figures.docx
-manuscript 20260318.pdf
-manuscript 20260318.docx
-Supplementary Figures 20260318.pdf
-Supplementary Figures 20260318.docx
-Supplementary Materials and Methods.docx
-Supplementary Materials and Methods 260318.docx
+# Manuscript files & generation script (regenerate via script)
 18_create_manuscript.py
-current_biology/*.docx
+*.docx
+manuscript*.pdf
+Supplementary*.docx
+Supplementary*.pdf
+
+# Large extracted images (original source files)
+*.tiff
+*.tif
+current_biology/extracted_image*
 
 # Raw sequencing data (download via 00_download_data.py)
 external_data/
@@ -56,6 +56,11 @@ Thumbs.db
 
 # Auto-generated PDF copies of manuscript figures (created by 08 and 09)
 manuscript_figures/
+
+# Legacy figure outputs (regenerate via scripts)
+results/
+*.csv
+version-2_integrated/temp/
 
 # Log files
 *.log
