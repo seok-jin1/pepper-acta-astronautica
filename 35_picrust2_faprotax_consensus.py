@@ -3,8 +3,16 @@ Script 35: PICRUSt2 / FAPROTAX Consensus Harmonization
 
 Harmonizes MetaCyc pathway-level Log2FC predictions from PICRUSt2 with
 FAPROTAX function-level Log2FC into a consensus table for the Acta
-Astronautica manuscript (Prediction P1: functional redundancy collapse
-underlies nitrogen-cycle failure in ISS rhizospheres).
+Astronautica manuscript (Prediction P1).
+
+Coverage caveat (documented 2026-04-15)
+---------------------------------------
+The default PICRUSt2 MetaCyc reference pathways used here cover
+denitrification and broad heterotrophic/fermentative metabolism well,
+but do NOT include canonical nitrification (ammonia/nitrite oxidation)
+or nitrogen-fixation pathways. Those functions are therefore validated
+via FAPROTAX plus the GTDB genome-level N-cycle gene evidence produced
+by script 36 (Fig 3b), rather than by pathway-level consensus here.
 
 Outputs:
     - acta_astronautica/consensus_function_log2fc.csv
@@ -21,15 +29,48 @@ import config
 
 
 # ---------------------------------------------------------------------------
-# Function -> MetaCyc pathway seed mapping
+# Function -> MetaCyc pathway mapping
+#
+# Curated 2026-04-15 against the actual pathway IDs present in the PICRUSt2
+# output for this study. Each listed ID has been verified present in
+# path_abun_unstrat.tsv.gz; functions left empty (nitrification, nitrogen
+# fixation) have no PICRUSt2 MetaCyc pathway coverage and are handled by
+# FAPROTAX + GTDB genome evidence elsewhere in the pipeline.
 # ---------------------------------------------------------------------------
 _FUNCTION_MAPPING = {
-    "nitrification": ["PWY-6523", "PWY-6964"],
-    "denitrification": ["PWY-5674", "DENITRIFICATION-PWY", "PWY-7084"],
-    "nitrogen_fixation": ["PWY-6963", "N2FIX-PWY"],
-    "chemoheterotrophy": ["TCA", "GLYCOLYSIS", "PWY-6142"],
-    "ureolysis": ["PWY-5329"],
-    "nitrate_reduction": ["PWY-381", "PWY-490-3"],
+    # Canonical denitrification pathways (three hits).
+    "denitrification": [
+        "DENITRIFICATION-PWY",
+        "PWY-5384",
+        "PWY-7084",
+    ],
+    # Broad aerobic/anaerobic heterotrophic metabolism.
+    "chemoheterotrophy": [
+        "GLYCOLYSIS",
+        "TCA",
+        "PWY-6142",
+    ],
+    # Mixed-acid and sugar fermentation pathways.
+    "fermentation": [
+        "FERMENTATION-PWY",
+        "ANAEROFRUCAT-PWY",
+        "P122-PWY",
+        "P461-PWY",
+        "P161-PWY",
+        "P241-PWY",
+        "P108-PWY",
+    ],
+    # Aromatic compound degradation (PGPR-relevant trait).
+    "aromatic_compound_degradation": [
+        "P221-PWY",
+        "P23-PWY",
+        "P42-PWY",
+    ],
+    # Nitrification and nitrogen fixation: retained as keys with empty
+    # ID lists so the coverage gap is explicit in diagnostics; both will
+    # be dropped by aggregate_by_function.
+    "nitrification": [],
+    "nitrogen_fixation": [],
 }
 
 
