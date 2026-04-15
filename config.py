@@ -329,6 +329,28 @@ def log_session_info(output_file="SESSION_INFO.txt"):
 # Self-Test (run when executed directly)
 # ============================================================================
 
+# ============================================================================
+# Acta Astronautica redesign (2026-04-15) — external datasets and outputs
+# ============================================================================
+
+# Veggie lettuce cross-mission validation (Prediction P3)
+VEGGIE_LETTUCE_OSDS = ["OSD-267", "OSD-269"]
+VEGGIE_LETTUCE_DIR = VERSION_DIR / "external" / "veggie_lettuce"
+
+# ISS environmental source pool (Fig 4d)
+ISS_ENV_OSD = "OSD-65"
+ISS_ENV_DIR = VERSION_DIR / "external" / "iss_environment"
+
+# Outputs for the Acta Astronautica manuscript
+AA_DIR = BASE_DIR / "acta_astronautica"
+AA_CONSENSUS_CSV = AA_DIR / "consensus_function_log2fc.csv"
+AA_GTDB_MATRIX_CSV = AA_DIR / "gtdb_ncycle_matrix.csv"
+AA_VEGGIE_RESULTS_CSV = AA_DIR / "veggie_lettuce_results.csv"
+AA_ISS_ENV_SOURCES_CSV = AA_DIR / "iss_env_sources.csv"
+
+AA_FIG_DIR = BASE_DIR / "figures" / "aa"
+
+
 if __name__ == "__main__":
     print("=" * 70)
     print("ISS Chile Pepper Analysis - Configuration Validation")
