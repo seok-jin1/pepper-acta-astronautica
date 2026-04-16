@@ -183,8 +183,8 @@ def panel_c_pipeline_dag(ax):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    fig, axes = plt.subplots(1, 3, figsize=(18, 7),
-                             gridspec_kw={"width_ratios": [1, 1, 1.3]})
+    fig, axes = plt.subplots(1, 3, figsize=(22, 9),
+                             gridspec_kw={"width_ratios": [0.9, 1.1, 1.4]})
     panel_a_veggie_hardware(axes[0])
     axes[0].set_title("a) ISS Veggie growth chamber",
                       loc="left", fontweight="bold", fontsize=10)

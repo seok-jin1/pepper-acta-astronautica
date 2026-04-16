@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import numpy as np
 import pandas as pd
 import seaborn as sns
 import config
@@ -19,10 +20,32 @@ VD = config.VERSION_DIR
 
 
 def panel_a_redundancy(ax):
-    ax.imshow(mpimg.imread(VD / "Fig1d_FunctionalRedundancy.png"))
-    ax.set_axis_off()
-    ax.set_title("a) Contributing genera per function (pepper)",
-                 loc="left", fontweight="bold")
+    df = pd.read_csv(VD / "Fig1d_Functional_Redundancy_Summary.csv")
+    key_funcs = ["nitrification", "nitrogen_fixation", "denitrification",
+                 "nitrate_reduction", "fermentation", "aerobic_chemoheterotrophy"]
+    df = df[df["Function"].isin(key_funcs)].set_index("Function").reindex(key_funcs)
+
+    y = np.arange(len(df))
+    h = 0.38
+    ax.barh(y - h/2, df["Terr_Mean"], h, xerr=df["Terr_SD"],
+            label="Terrestrial Soil", color="#2b8cbe",
+            error_kw={"elinewidth": 0.8, "capsize": 2})
+    ax.barh(y + h/2, df["Space_Mean"], h, xerr=df["Space_SD"],
+            label="Space Flight", color="#e34a33",
+            error_kw={"elinewidth": 0.8, "capsize": 2})
+    ax.set_yticks(y); ax.set_yticklabels(df.index, fontsize=9)
+    ax.invert_yaxis()
+    ax.set_xlabel("# contributing genera (mean ± SD)", fontsize=9)
+    # Significance stars
+    for i, (_, row) in enumerate(df.iterrows()):
+        sig = str(row.get("sig", "")).strip()
+        if sig and sig != "nan":
+            xmax = max(float(row["Terr_Mean"] + row["Terr_SD"]),
+                       float(row["Space_Mean"] + row["Space_SD"]))
+            ax.text(xmax + 0.3, i, sig, va="center", fontsize=10, color="red")
+    ax.legend(fontsize=8, loc="lower right")
+    ax.set_title("a) Contributing genera per function (pepper, BH q < 0.05)",
+                 loc="left", fontweight="bold", fontsize=11)
 
 
 def panel_b_gtdb_matrix(ax):
@@ -48,36 +71,52 @@ def panel_b_gtdb_matrix(ax):
 
 
 def panel_c_pgp(ax):
-    img = VD / "Fig1c_NCycle_Heatmap.png"
-    # The existing NCycle heatmap already bundles PGP entropy; but for clarity
-    # we show the PGP entropy CSV as a bar plot.
-    try:
-        df = pd.read_csv(config.VERSION_DIR / "Fig1c_PGP_Specificity_Results.csv")
-        if "Study_Group" in df.columns and "Shannon_Entropy" in df.columns:
-            means = df.groupby("Study_Group")["Shannon_Entropy"].mean()
-            ax.bar(means.index, means.values,
-                   color=["#e34a33", "#2b8cbe"])
-            ax.set_ylabel("Shannon entropy (PGP specificity)")
-            ax.set_title("c) PGP specificity entropy",
-                         loc="left", fontweight="bold")
-            for i, v in enumerate(means.values):
-                ax.text(i, v, f"{v:.2f}", ha="center", va="bottom")
-        else:
-            # Fallback — show any column ending with entropy
-            num_cols = df.select_dtypes("number").columns.tolist()
-            if num_cols:
-                df.boxplot(column=num_cols[0], ax=ax)
-                ax.set_title("c) PGP specificity", loc="left", fontweight="bold")
-            else:
-                ax.set_axis_off()
-    except FileNotFoundError:
-        ax.set_axis_off()
+    summary = pd.read_csv(VD / "Fig1c_PGP_Specificity_Summary.csv")
+    results = pd.read_csv(VD / "Fig1c_PGP_Specificity_Results.csv")
+    # Box + jittered points per group
+    groups = ["Terrestrial_Soil", "Space_Flight"]
+    data = [results.loc[results["Study_Group"] == g, "Specificity_H"].values
+            for g in groups]
+    colors = ["#2b8cbe", "#e34a33"]
+    bp = ax.boxplot(data, patch_artist=True, widths=0.55)
+    for patch, c in zip(bp["boxes"], colors):
+        patch.set_facecolor(c); patch.set_alpha(0.5)
+    for line in bp["medians"]:
+        line.set_color("black")
+    # jitter points
+    import numpy as np
+    rng = np.random.default_rng(0)
+    for i, (g, c) in enumerate(zip(groups, colors)):
+        vals = data[i]
+        x = rng.normal(i + 1, 0.06, size=len(vals))
+        ax.scatter(x, vals, s=14, color=c, edgecolor="black", linewidth=0.3, alpha=0.7)
+    ax.set_xticks([1, 2])
+    ax.set_xticklabels(["Terrestrial", "Space"], fontsize=9)
+    ax.set_ylabel("PGP Shannon entropy (H)", fontsize=9)
+    # Annotate means from summary
+    if "H_Mean" in summary.columns:
+        means = summary.set_index("Group")["H_Mean"]
+        for i, g in enumerate(groups):
+            if g in means.index:
+                ax.text(i + 1, ax.get_ylim()[1] * 0.95,
+                        f"{means[g]:.2f}", ha="center", fontsize=8)
+    # MWU p from summary
+    p_text = ""
+    if "MWU_p" in summary.columns:
+        p_vals = summary["MWU_p"].dropna()
+        if len(p_vals) > 0:
+            p_text = f"MWU p = {p_vals.iloc[0]:.1e}"
+    if p_text:
+        ax.text(0.5, 1.02, p_text, transform=ax.transAxes,
+                fontsize=8, color="dimgrey", ha="center")
+    ax.set_title("c) PGP specificity entropy",
+                 loc="left", fontweight="bold", fontsize=11)
 
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    fig = plt.figure(figsize=(16, 6))
-    gs = fig.add_gridspec(1, 3, width_ratios=[1.1, 1.5, 0.9], wspace=0.35)
+    fig = plt.figure(figsize=(17, 6.5))
+    gs = fig.add_gridspec(1, 3, width_ratios=[1.3, 1.6, 0.7], wspace=0.4)
     panel_a_redundancy(fig.add_subplot(gs[0, 0]))
     panel_b_gtdb_matrix(fig.add_subplot(gs[0, 1]))
     panel_c_pgp(fig.add_subplot(gs[0, 2]))

@@ -54,13 +54,14 @@ def panel_e_ncycle_heatmap(ax):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    fig = plt.figure(figsize=(16, 11))
-    gs = fig.add_gridspec(3, 6, hspace=0.28, wspace=0.25)
-    panel_a_faith_pd(fig.add_subplot(gs[0, 0:2]))
-    panel_b_permanova(fig.add_subplot(gs[0, 2:4]))
-    panel_c_faprotax(fig.add_subplot(gs[0, 4:6]))
-    panel_d_consensus(fig.add_subplot(gs[1:, 0:3]))
-    panel_e_ncycle_heatmap(fig.add_subplot(gs[1:, 3:6]))
+    fig = plt.figure(figsize=(18, 13))
+    gs = fig.add_gridspec(2, 3, height_ratios=[1, 1.25],
+                          hspace=0.22, wspace=0.12)
+    panel_a_faith_pd(fig.add_subplot(gs[0, 0]))
+    panel_b_permanova(fig.add_subplot(gs[0, 1]))
+    panel_c_faprotax(fig.add_subplot(gs[0, 2]))
+    panel_d_consensus(fig.add_subplot(gs[1, 0:2]))
+    panel_e_ncycle_heatmap(fig.add_subplot(gs[1, 2]))
     fig.suptitle("Figure 2. Rhizosphere functional collapse in ISS-grown Capsicum annuum",
                  fontsize=13, fontweight="bold", y=0.995)
     out = OUT / "Fig2_failure_signature"
