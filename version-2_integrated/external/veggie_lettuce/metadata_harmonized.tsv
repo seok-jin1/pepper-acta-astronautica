@@ -1,0 +1,9 @@
+sample-id	Study_Group	Compartment	Crop	OSD	Mission	Sample_Type
+Flight_Plant_Root_A	Space_Flight	ROOT_ZONE	lettuce	OSD-267	SpaceX-3	Root
+Flight_Plant_Root_C	Space_Flight	ROOT_ZONE	lettuce	OSD-267	SpaceX-3	Root
+Ground_Plant_Root_A	Terrestrial_Soil	ROOT_ZONE	lettuce	OSD-267	SpaceX-3	Root
+Ground_Plant_Root_C	Terrestrial_Soil	ROOT_ZONE	lettuce	OSD-267	SpaceX-3	Root
+V03A-Flt_Root_A_S29_L001	Space_Flight	ROOT_ZONE	lettuce	OSD-269	SpaceX-8	Root
+V03A-Flt_Root_B_S32_L001	Space_Flight	ROOT_ZONE	lettuce	OSD-269	SpaceX-8	Root
+V03A-Ground_Root_A_S37_L001	Terrestrial_Soil	ROOT_ZONE	lettuce	OSD-269	SpaceX-8	Root
+V03A-Ground_Root_B_S40_L001	Terrestrial_Soil	ROOT_ZONE	lettuce	OSD-269	SpaceX-8	Root
