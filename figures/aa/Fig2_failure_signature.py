@@ -32,7 +32,7 @@ def panel_b_permanova(ax):
 
 
 def panel_c_faprotax(ax):
-    img = VD / "Fig1b_FAPROTAX_Log2FC.png"
+    img = VD / "Fig2A_FAPROTAX_Log2FC.png"
     ax.imshow(mpimg.imread(img))
     ax.set_axis_off()
     ax.set_title("c) FAPROTAX Log₂FC (Space / Terr)", loc="left", fontweight="bold")
@@ -46,10 +46,10 @@ def panel_d_consensus(ax):
 
 
 def panel_e_ncycle_heatmap(ax):
-    img = VD / "Fig1c_NCycle_Heatmap.png"
+    img = config.CURRENT_BIOLOGY_DIR / "Fig1c_NCycle_Heatmap.png"
     ax.imshow(mpimg.imread(img))
     ax.set_axis_off()
-    ax.set_title("e) N-cycle completeness (Terr 100 % → Space 73 %)", loc="left", fontweight="bold")
+    ax.set_title("e) N-cycle completeness (Terr 100 % → Space 76 %)", loc="left", fontweight="bold")
 
 
 def main():

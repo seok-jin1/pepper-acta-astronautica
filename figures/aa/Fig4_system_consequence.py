@@ -19,7 +19,7 @@ OUT = config.AA_FIG_DIR
 
 
 def panel_a_network_metrics(ax):
-    df = pd.read_csv(config.VERSION_DIR / "Fig1e_Network_Genus_Metrics.csv")
+    df = pd.read_csv(config.VERSION_DIR / "Fig2E_Network_Genus_Metrics.csv")
     metrics = ["Nodes", "Edges", "Density", "Avg_Degree", "Negative_Edges"]
     df_plot = df.set_index("Group")[metrics].T
     x = np.arange(len(metrics))

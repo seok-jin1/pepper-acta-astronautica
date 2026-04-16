@@ -45,7 +45,7 @@ def panel_a_log2fc_sidebyside(ax):
 
 
 def panel_b_ncycle_completeness(ax):
-    pepper_summary = pd.read_csv(config.VERSION_DIR / "Fig1c_NCycle_Completeness_Summary.csv")
+    pepper_summary = pd.read_csv(config.VERSION_DIR / "Fig2B_NCycle_Completeness_Summary.csv")
     # Pepper summary columns: Group, Completeness_Mean (fractional), ...
     # Convert fractional to percentage for parity with lettuce
     p_mean = (pepper_summary.set_index("Group")["Completeness_Mean"] * 100)
@@ -72,7 +72,7 @@ def panel_b_ncycle_completeness(ax):
 
 
 def panel_c_redundancy_sidebyside(ax):
-    pepper_r = pd.read_csv(config.VERSION_DIR / "Fig1d_Functional_Redundancy_Summary.csv")
+    pepper_r = pd.read_csv(config.VERSION_DIR / "Fig2C_Functional_Redundancy_Summary.csv")
     lettuce_r = pd.read_csv(config.AA_DIR / "veggie_functional_redundancy.csv")
 
     def get_pepper_value(func, grp):

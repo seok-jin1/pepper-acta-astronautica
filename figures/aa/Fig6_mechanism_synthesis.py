@@ -22,7 +22,7 @@ OUT = config.AA_FIG_DIR
 # Panel a — βNTI/RCbray quadrant
 # ---------------------------------------------------------------------------
 def panel_a_bnti_rcbray(ax):
-    df = pd.read_csv(config.VERSION_DIR / "SuppS2c_BNTI_RCbray_results.csv")
+    df = pd.read_csv(config.VERSION_DIR / "SuppS4_BNTI_RCbray_results.csv")
     # Focus on within-group comparisons
     within = df[df["group1"] == df["group2"]].copy()
     colors = {"Space_Flight": "#e34a33", "Terrestrial_Soil": "#2b8cbe"}

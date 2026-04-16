@@ -71,8 +71,8 @@ def panel_b_gtdb_matrix(ax):
 
 
 def panel_c_pgp(ax):
-    summary = pd.read_csv(VD / "Fig1c_PGP_Specificity_Summary.csv")
-    results = pd.read_csv(VD / "Fig1c_PGP_Specificity_Results.csv")
+    summary = pd.read_csv(VD / "Fig2B_PGP_Specificity_Summary.csv")
+    results = pd.read_csv(VD / "Fig2B_PGP_Specificity_Results.csv")
     # Box + jittered points per group
     groups = ["Terrestrial_Soil", "Space_Flight"]
     data = [results.loc[results["Study_Group"] == g, "Specificity_H"].values

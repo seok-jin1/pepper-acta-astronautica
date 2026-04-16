@@ -160,6 +160,15 @@ if __name__ == '__main__':
     print('\n[1] Loading feature tables...')
     sp_rel  = aggregate_to_genus(config.FEATURE_TABLE_SPACE, config.TAXONOMY_FILE)
     tr_rel  = aggregate_to_genus(config.FEATURE_TABLE_TERR,  config.TAXONOMY_FILE)
+    # Root-zone filter: restrict Space_Flight to Plant Roots + Rhizosphere
+    ROOT_ZONE_TYPES = {'Plant Roots', 'Rhizosphere'}
+    meta_all = pd.read_csv(config.INTEGRATED_METADATA, sep='\t', index_col=0)
+    root_zone_ids = meta_all.index[
+        (meta_all['Study_Group'] == 'Space_Flight') &
+        meta_all['sample_type'].isin(ROOT_ZONE_TYPES)
+    ].tolist()
+    sp_rel = sp_rel[[c for c in sp_rel.columns if c in root_zone_ids]]
+    print(f'  Space genus table (root-zone filter): {sp_rel.shape[0]} genera × {sp_rel.shape[1]} samples')
     top_gen = select_top_shared_genera(sp_rel, tr_rel)
     print(f'  Top {TOP_N} shared genera selected')
     print(f'  Genera: {list(top_gen)}')
@@ -226,6 +235,8 @@ if __name__ == '__main__':
     print('\n[3] Saving results...')
     df.to_csv(OUTPUT_DIR / 'SuppS5_NetworkSensitivity_Results.csv', index=False)
     print('  Saved: SuppS5_NetworkSensitivity_Results.csv')
+    df.to_csv(OUTPUT_DIR / 'SuppS2b_ThresholdSensitivity_Results.csv', index=False)
+    print('  Saved: SuppS2b_ThresholdSensitivity_Results.csv')
 
     # ─────────────────────────────────────────────────────────────────────────
     # Plot

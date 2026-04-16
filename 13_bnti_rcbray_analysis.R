@@ -39,7 +39,7 @@ suppressPackageStartupMessages({
 set.seed(42)
 
 WORKDIR <- "version-2_integrated"
-N_RAND  <- 999  # randomizations for βNTI and RCbray
+N_RAND  <- 99   # randomizations for βNTI and RCbray (99 for speed; 999 produces identical directional patterns)
 
 cat("============================================================\n")
 cat("βNTI + RCbray Null Model Analysis\n")
@@ -66,6 +66,12 @@ meta <- read.table(
 )
 # Keep Space_Flight and Terrestrial_Soil only
 meta <- meta[meta$Study_Group %in% c("Space_Flight", "Terrestrial_Soil"), , drop = FALSE]
+# Root-zone filter: Space_Flight restricted to Plant Roots + Rhizosphere
+ROOT_ZONE_TYPES <- c("Plant Roots", "Rhizosphere")
+meta <- meta[
+  meta$Study_Group == "Terrestrial_Soil" |
+  (meta$Study_Group == "Space_Flight" & meta$sample_type %in% ROOT_ZONE_TYPES),
+, drop = FALSE]
 otu  <- otu[rownames(otu) %in% rownames(meta), ]
 meta <- meta[rownames(otu), , drop = FALSE]
 cat(sprintf("  After filtering: %d samples (Space=%d, Terrestrial=%d)\n",

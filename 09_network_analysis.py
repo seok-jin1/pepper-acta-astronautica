@@ -361,8 +361,19 @@ if __name__ == '__main__':
     print('\n[1] Aggregating to genus level...')
     sp_rel = aggregate_to_genus(config.FEATURE_TABLE_SPACE, config.TAXONOMY_FILE)
     tr_rel = aggregate_to_genus(config.FEATURE_TABLE_TERR,  config.TAXONOMY_FILE)
-    print(f'  Space genus table:       {sp_rel.shape[0]} genera × {sp_rel.shape[1]} samples')
+    print(f'  Space genus table (raw): {sp_rel.shape[0]} genera × {sp_rel.shape[1]} samples')
     print(f'  Terrestrial genus table: {tr_rel.shape[0]} genera × {tr_rel.shape[1]} samples')
+
+    # Filter Space to root-zone samples (Plant Roots + Rhizosphere) to match
+    # the compartment filter applied in FAPROTAX and functional redundancy analyses.
+    ROOT_ZONE_TYPES = {'Plant Roots', 'Rhizosphere'}
+    meta_all = pd.read_csv(config.INTEGRATED_METADATA, sep='\t', index_col=0)
+    root_zone_ids = meta_all.index[
+        (meta_all['Study_Group'] == 'Space_Flight') &
+        meta_all['sample_type'].isin(ROOT_ZONE_TYPES)
+    ].tolist()
+    sp_rel = sp_rel[[c for c in sp_rel.columns if c in root_zone_ids]]
+    print(f'  Space genus table (root-zone filter): {sp_rel.shape[0]} genera × {sp_rel.shape[1]} samples')
 
     print('\n[2] Selecting top shared genera...')
     top_genera = select_shared_top_genera(sp_rel, tr_rel, n=TOP_N)
