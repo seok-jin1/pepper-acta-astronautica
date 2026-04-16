@@ -314,10 +314,16 @@ if __name__ == '__main__':
 
     print('\n[3] Loading metadata and filtering...')
     meta = pd.read_csv(config.INTEGRATED_METADATA, sep='\t', index_col=0)
-    meta = meta[meta['Study_Group'].isin(['Space_Flight', 'Terrestrial_Soil'])]
+    # Filter to root-zone samples: Terrestrial_Soil (all Rhizosphere) and
+    # Space_Flight restricted to Plant Roots + Rhizosphere compartments only.
+    ROOT_ZONE_TYPES = {'Plant Roots', 'Rhizosphere'}
+    meta = meta[
+        (meta['Study_Group'] == 'Terrestrial_Soil') |
+        ((meta['Study_Group'] == 'Space_Flight') & meta['sample_type'].isin(ROOT_ZONE_TYPES))
+    ]
     genus_rel = genus_rel[genus_rel.columns.intersection(meta.index)]
     print(f'  {len(meta)} samples retained '
-          f'(Space={sum(meta.Study_Group=="Space_Flight")}, '
+          f'(Space root-zone={sum(meta.Study_Group=="Space_Flight")}, '
           f'Terrestrial={sum(meta.Study_Group=="Terrestrial_Soil")})')
 
     print('\n[4] Computing functional redundancy...')

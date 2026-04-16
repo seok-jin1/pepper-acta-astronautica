@@ -93,8 +93,17 @@ def prepare_input_table(meta):
     print('  Loading feature table and taxonomy...')
     table = pd.read_csv(config.FEATURE_TABLE_CLEAN, sep='\t', skiprows=1, index_col=0)
 
-    # Filter to Space_Flight and Terrestrial_Soil only
-    keep = meta.index[meta['Study_Group'].isin(['Space_Flight', 'Terrestrial_Soil'])].tolist()
+    # Filter to root-zone samples only (Plant Roots + Rhizosphere for Space_Flight;
+    # all Rhizosphere for Terrestrial_Soil — avoids mixing leaf/stem/foam/swab signals
+    # into the rhizosphere comparison).
+    ROOT_ZONE_TYPES = {'Plant Roots', 'Rhizosphere'}
+    root_mask = (
+        (meta['Study_Group'] == 'Terrestrial_Soil') |
+        ((meta['Study_Group'] == 'Space_Flight') & meta['sample_type'].isin(ROOT_ZONE_TYPES))
+    )
+    keep = meta.index[root_mask].tolist()
+    print(f'    Root-zone filter: Space_Flight={sum((meta["Study_Group"]=="Space_Flight") & meta["sample_type"].isin(ROOT_ZONE_TYPES))}, '
+          f'Terrestrial_Soil={sum(meta["Study_Group"]=="Terrestrial_Soil")}')
     table = table[[c for c in table.columns if c in keep]]
 
     tax = pd.read_csv(config.TAXONOMY_FILE, sep='\t', index_col=0)

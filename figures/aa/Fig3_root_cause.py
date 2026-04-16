@@ -20,7 +20,7 @@ VD = config.VERSION_DIR
 
 
 def panel_a_redundancy(ax):
-    df = pd.read_csv(VD / "Fig1d_Functional_Redundancy_Summary.csv")
+    df = pd.read_csv(VD / "Fig2C_Functional_Redundancy_Summary.csv")
     key_funcs = ["nitrification", "nitrogen_fixation", "denitrification",
                  "nitrate_reduction", "fermentation", "aerobic_chemoheterotrophy"]
     df = df[df["Function"].isin(key_funcs)].set_index("Function").reindex(key_funcs)

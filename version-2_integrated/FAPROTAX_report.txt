@@ -1,12 +1,12 @@
-# Report for collapsed table: /home/laugh/temp/pepper/version-2_integrated/FAPROTAX_functional_table.tsv
-# Collapsed table generated on: 2026.03.18 00:48:28
-# Original table: /home/laugh/temp/pepper/version-2_integrated/faprotax_input.tsv
+# Report for collapsed table: /home/laugh/pepper-aa-work/version-2_integrated/FAPROTAX_functional_table.tsv
+# Collapsed table generated on: 2026.04.16 19:03:22
+# Original table: /home/laugh/pepper-aa-work/version-2_integrated/faprotax_input.tsv
 # Details:
-#  Original classical table contained 1740 rows and 127 columns
-#  After filtering rows & columns, obtained a table containing 1740 rows & 126 columns
-#  After (potentially) filtering out records based on name, obtained a table comprising 1740 records & 126 data entries per record
+#  Original classical table contained 1740 rows and 41 columns
+#  After filtering rows & columns, obtained a table containing 1740 rows & 40 columns
+#  After (potentially) filtering out records based on name, obtained a table comprising 1740 records & 40 data entries per record
 # Used command:
-#   /home/laugh/pepper/FAPROTAX_1.2.12/collapse_table.py -i /home/laugh/temp/pepper/version-2_integrated/faprotax_input.tsv -o /home/laugh/temp/pepper/version-2_integrated/FAPROTAX_functional_table.tsv -g /home/laugh/pepper/FAPROTAX_1.2.12/FAPROTAX.txt -r /home/laugh/temp/pepper/version-2_integrated/FAPROTAX_report.txt --row_names_are_in_column OTU_ID -f -v
+#   /home/laugh/pepper/FAPROTAX_1.2.12/collapse_table.py -i /home/laugh/pepper-aa-work/version-2_integrated/faprotax_input.tsv -o /home/laugh/pepper-aa-work/version-2_integrated/FAPROTAX_functional_table.tsv -g /home/laugh/pepper/FAPROTAX_1.2.12/FAPROTAX.txt -r /home/laugh/pepper-aa-work/version-2_integrated/FAPROTAX_report.txt --row_names_are_in_column OTU_ID -f -v
 #
 # Summary of group assignments:
 #   methanotrophy: 4 records

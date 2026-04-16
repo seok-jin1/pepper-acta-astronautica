@@ -55,7 +55,11 @@ def load_pepper_space_genera() -> pd.Series:
     tax = pd.read_csv(config.TAXONOMY_FILE, sep="\t", index_col=0)
     meta = pd.read_csv(config.INTEGRATED_METADATA, sep="\t", index_col=0)
 
-    space_samples = meta.index[meta["Study_Group"] == "Space_Flight"].tolist()
+    # Restrict to root-zone Space_Flight samples to match FAPROTAX/redundancy analyses.
+    ROOT_ZONE_TYPES = {"Plant Roots", "Rhizosphere"}
+    space_samples = meta.index[
+        (meta["Study_Group"] == "Space_Flight") & meta["sample_type"].isin(ROOT_ZONE_TYPES)
+    ].tolist()
     space_cols = [c for c in tbl.columns if c in space_samples]
     tbl_s = tbl[space_cols]
 

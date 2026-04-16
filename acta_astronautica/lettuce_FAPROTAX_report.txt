@@ -1,0 +1,534 @@
+# Report for collapsed table: /home/laugh/pepper-aa-work/acta_astronautica/lettuce_FAPROTAX_functional_table.tsv
+# Collapsed table generated on: 2026.04.16 10:26:46
+# Original table: /home/laugh/pepper-aa-work/acta_astronautica/lettuce_faprotax_input.tsv
+# Details:
+#  Original classical table contained 158 rows and 9 columns
+#  After filtering rows & columns, obtained a table containing 158 rows & 8 columns
+#  After (potentially) filtering out records based on name, obtained a table comprising 158 records & 8 data entries per record
+# Used command:
+#   /home/laugh/pepper/FAPROTAX_1.2.12/collapse_table.py -i /home/laugh/pepper-aa-work/acta_astronautica/lettuce_faprotax_input.tsv -o /home/laugh/pepper-aa-work/acta_astronautica/lettuce_FAPROTAX_functional_table.tsv -g /home/laugh/pepper/FAPROTAX_1.2.12/FAPROTAX.txt -r /home/laugh/pepper-aa-work/acta_astronautica/lettuce_FAPROTAX_report.txt --row_names_are_in_column OTU_ID -f -v
+#
+# Summary of group assignments:
+#   methanotrophy: 1 records
+#   acetoclastic_methanogenesis: 0 records
+#   methanogenesis_by_disproportionation_of_methyl_groups: 0 records
+#   methanogenesis_using_formate: 0 records
+#   methanogenesis_by_CO2_reduction_with_H2: 0 records
+#   methanogenesis_by_reduction_of_methyl_compounds_with_H2: 0 records
+#   hydrogenotrophic_methanogenesis: 0 records
+#   methanogenesis: 0 records
+#   methanol_oxidation: 1 records
+#   methylotrophy: 2 records
+#   aerobic_ammonia_oxidation: 1 records
+#   aerobic_nitrite_oxidation: 0 records
+#   nitrification: 1 records
+#   sulfate_respiration: 0 records
+#   sulfur_respiration: 0 records
+#   dark_sulfite_oxidation: 0 records
+#   sulfite_respiration: 0 records
+#   thiosulfate_respiration: 0 records
+#   respiration_of_sulfur_compounds: 0 records
+#   arsenate_detoxification: 0 records
+#   arsenate_respiration: 0 records
+#   dissimilatory_arsenate_reduction: 0 records
+#   arsenite_oxidation_detoxification: 0 records
+#   arsenite_oxidation_energy_yielding: 0 records
+#   dissimilatory_arsenite_oxidation: 0 records
+#   anammox: 0 records
+#   nitrate_denitrification: 0 records
+#   nitrite_denitrification: 0 records
+#   nitrous_oxide_denitrification: 0 records
+#   denitrification: 0 records
+#   chitinolysis: 0 records
+#   knallgas_bacteria: 1 records
+#   dark_hydrogen_oxidation: 1 records
+#   nitrogen_fixation: 3 records
+#   nitrate_ammonification: 0 records
+#   nitrite_ammonification: 0 records
+#   nitrite_respiration: 1 records
+#   cellulolysis: 0 records
+#   xylanolysis: 0 records
+#   dark_sulfide_oxidation: 0 records
+#   dark_sulfur_oxidation: 0 records
+#   dark_thiosulfate_oxidation: 0 records
+#   dark_oxidation_of_sulfur_compounds: 1 records
+#   manganese_oxidation: 0 records
+#   manganese_respiration: 0 records
+#   ligninolysis: 0 records
+#   fermentation: 6 records
+#   aerobic_chemoheterotrophy: 38 records
+#   invertebrate_parasites: 0 records
+#   human_pathogens_septicemia: 0 records
+#   human_pathogens_pneumonia: 0 records
+#   human_pathogens_nosocomia: 0 records
+#   human_pathogens_meningitis: 0 records
+#   human_pathogens_gastroenteritis: 0 records
+#   human_pathogens_diarrhea: 0 records
+#   human_pathogens_all: 2 records
+#   fish_parasites: 0 records
+#   human_gut: 0 records
+#   human_associated: 2 records
+#   mammal_gut: 0 records
+#   animal_parasites_or_symbionts: 4 records
+#   plant_pathogen: 0 records
+#   oil_bioremediation: 0 records
+#   aromatic_hydrocarbon_degradation: 2 records
+#   aromatic_compound_degradation: 4 records
+#   aliphatic_non_methane_hydrocarbon_degradation: 2 records
+#   hydrocarbon_degradation: 4 records
+#   dark_iron_oxidation: 0 records
+#   iron_respiration: 0 records
+#   nitrate_respiration: 2 records
+#   nitrate_reduction: 4 records
+#   nitrogen_respiration: 2 records
+#   fumarate_respiration: 0 records
+#   intracellular_parasites: 4 records
+#   chlorate_reducers: 0 records
+#   predatory_or_exoparasitic: 1 records
+#   chloroplasts: 2 records
+#   nonphotosynthetic_cyanobacteria: 0 records
+#   photosynthetic_cyanobacteria: 0 records
+#   anoxygenic_photoautotrophy_H2_oxidizing: 0 records
+#   anoxygenic_photoautotrophy_S_oxidizing: 0 records
+#   anoxygenic_photoautotrophy_Fe_oxidizing: 0 records
+#   anoxygenic_photoautotrophy: 0 records
+#   oxygenic_photoautotrophy: 0 records
+#   photoautotrophy: 0 records
+#   aerobic_anoxygenic_phototrophy: 0 records
+#   photoheterotrophy: 1 records
+#   phototrophy: 1 records
+#   plastic_degradation: 0 records
+#   ureolysis: 4 records
+#   reductive_acetogenesis: 0 records
+#   chemoheterotrophy: 49 records
+#
+# Loaded 92 groups comprising 8354 members (5058 unique members)
+# Established 147 assignments of records to groups
+# 60 out of 158 records (37.9747 %) were assigned to at least one group
+# 98 out of 158 records (62.0253 %) could not be assigned to any group (leftovers)
+# 29 groups were represented (i.e. associated with at least one record)
+# Detailed group assignments are listed below
+
+# methanotrophy (1 records):
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Methylococcales; f__Methylococcaceae; g__Methyloparacoccus; s__
+
+
+# acetoclastic_methanogenesis (0 records):
+
+
+# methanogenesis_by_disproportionation_of_methyl_groups (0 records):
+
+
+# methanogenesis_using_formate (0 records):
+
+
+# methanogenesis_by_CO2_reduction_with_H2 (0 records):
+
+
+# methanogenesis_by_reduction_of_methyl_compounds_with_H2 (0 records):
+
+
+# hydrogenotrophic_methanogenesis (0 records):
+
+
+# methanogenesis (0 records):
+
+
+# methanol_oxidation (1 records):
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Methylophilaceae; g__; s__
+
+
+# methylotrophy (2 records):
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Methylophilaceae; g__; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Methylococcales; f__Methylococcaceae; g__Methyloparacoccus; s__
+
+
+# aerobic_ammonia_oxidation (1 records):
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Nitrosomonadaceae; g__Nitrosomonas; s__
+
+
+# aerobic_nitrite_oxidation (0 records):
+
+
+# nitrification (1 records):
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Nitrosomonadaceae; g__Nitrosomonas; s__
+
+
+# sulfate_respiration (0 records):
+
+
+# sulfur_respiration (0 records):
+
+
+# dark_sulfite_oxidation (0 records):
+
+
+# sulfite_respiration (0 records):
+
+
+# thiosulfate_respiration (0 records):
+
+
+# respiration_of_sulfur_compounds (0 records):
+
+
+# arsenate_detoxification (0 records):
+
+
+# arsenate_respiration (0 records):
+
+
+# dissimilatory_arsenate_reduction (0 records):
+
+
+# arsenite_oxidation_detoxification (0 records):
+
+
+# arsenite_oxidation_energy_yielding (0 records):
+
+
+# dissimilatory_arsenite_oxidation (0 records):
+
+
+# anammox (0 records):
+
+
+# nitrate_denitrification (0 records):
+
+
+# nitrite_denitrification (0 records):
+
+
+# nitrous_oxide_denitrification (0 records):
+
+
+# denitrification (0 records):
+
+
+# chitinolysis (0 records):
+
+
+# knallgas_bacteria (1 records):
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Hydrogenophilaceae; g__Hydrogenophilus; s__
+
+
+# dark_hydrogen_oxidation (1 records):
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Hydrogenophilaceae; g__Hydrogenophilus; s__
+
+
+# nitrogen_fixation (3 records):
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Azospirillales; f__Azospirillaceae; g__Azospirillum; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Rhizobiaceae; g__Mesorhizobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Xanthobacteraceae; g__Bradyrhizobium; s__
+
+
+# nitrate_ammonification (0 records):
+
+
+# nitrite_ammonification (0 records):
+
+
+# nitrite_respiration (1 records):
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Rhodocyclaceae; g__Thauera; s__
+
+
+# cellulolysis (0 records):
+
+
+# xylanolysis (0 records):
+
+
+# dark_sulfide_oxidation (0 records):
+
+
+# dark_sulfur_oxidation (0 records):
+
+
+# dark_thiosulfate_oxidation (0 records):
+
+
+# dark_oxidation_of_sulfur_compounds (1 records):
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Beijerinckiaceae; g__Bosea; s__
+
+
+# manganese_oxidation (0 records):
+
+
+# manganese_respiration (0 records):
+
+
+# ligninolysis (0 records):
+
+
+# fermentation (6 records):
+    d__Bacteria; p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Porphyromonadaceae; g__Porphyromonas; s__
+    d__Bacteria; p__Bacteroidetes; c__Bacteroidia; o__Flavobacteriales; f__Weeksellaceae; g__Cloacibacterium; s__
+    d__Bacteria; p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Lactococcus; s__
+    d__Bacteria; p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__
+    d__Bacteria; p__Firmicutes; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Oribacterium; s__
+    d__Bacteria; p__Firmicutes; c__Negativicutes; o__Veillonellales-Selenomonadales; f__Veillonellaceae; g__Veillonella; s__
+
+
+# aerobic_chemoheterotrophy (38 records):
+    d__Bacteria; p__Acidobacteria; c__Acidobacteriae; o__Acidobacteriales; f__Acidobacteriaceae (Subgroup 1); g__Edaphobacter; s__
+    d__Bacteria; p__Acidobacteria; c__Acidobacteriae; o__Bryobacterales; f__Bryobacteraceae; g__Bryobacter; s__
+    d__Bacteria; p__Actinobacteria; c__Actinobacteria; o__Micrococcales; f__Microbacteriaceae; g__; s__
+    d__Bacteria; p__Actinobacteria; c__Actinobacteria; o__Mycobacteriales; f__Mycobacteriaceae; g__Mycobacterium; s__
+    d__Bacteria; p__Actinobacteria; c__Actinobacteria; o__Mycobacteriales; f__Nocardiaceae; g__Williamsia; s__
+    d__Bacteria; p__Actinobacteria; c__Thermoleophilia; o__Solirubrobacterales; f__Solirubrobacteraceae; g__Patulibacter; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Corynebacteriales; f__Mycobacteriaceae; g__Mycobacterium; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Corynebacteriales; f__Nocardiaceae; g__Gordonia; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Corynebacteriales; f__Nocardiaceae; g__Williamsia; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Micrococcales; f__Intrasporangiaceae; g__Phycicoccus; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Micrococcales; f__Microbacteriaceae; g__; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Micrococcales; f__Microbacteriaceae; g__Leifsonia; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Micrococcales; f__Micrococcaceae; g__Kocuria; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Propionibacteriales; f__Nocardioidaceae; g__Marmoricola; s__
+    d__Bacteria; p__Firmicutes; c__Bacilli; o__Paenibacillales; f__Paenibacillaceae; g__Paenibacillus; s__
+    d__Bacteria; p__Planctomycetes; c__Planctomycetes; o__Isosphaerales; f__Isosphaeraceae; g__Singulisphaera; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Azospirillales; f__Azospirillaceae; g__Azospirillum; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Caulobacterales; f__Caulobacteraceae; g__Caulobacter; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Hyphomicrobiales; f__Hyphomicrobiaceae; g__Hyphomicrobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Reyranellales; f__Reyranellaceae; g__Reyranella; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Beijerinckiaceae; g__Bosea; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Devosiaceae; g__Devosia; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Hyphomicrobiaceae; g__Hyphomicrobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Labraceae; g__Labrys; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Rhizobiaceae; g__Mesorhizobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Xanthobacteraceae; g__Bradyrhizobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Xanthobacteraceae; g__Rhodopseudomonas; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Sphingomonadales; f__Sphingomonadaceae; g__; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Sphingomonadales; f__Sphingomonadaceae; g__Novosphingobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Sphingomonadales; f__Sphingomonadaceae; g__Sphingobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Sphingomonadales; f__Sphingomonadaceae; g__Sphingomonas; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Burkholderiaceae; g__Cupriavidus; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Rhodocyclaceae; g__Thauera; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Moraxellaceae; g__Acinetobacter; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Pseudomonadaceae; g__Pseudomonas; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Salinisphaerales; f__Solimonadaceae; g__Nevskia; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Xanthomonadales; f__Rhodanobacteraceae; g__Rhodanobacter; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Xanthomonadales; f__Xanthomonadaceae; g__Stenotrophomonas; s__
+
+
+# invertebrate_parasites (0 records):
+
+
+# human_pathogens_septicemia (0 records):
+
+
+# human_pathogens_pneumonia (0 records):
+
+
+# human_pathogens_nosocomia (0 records):
+
+
+# human_pathogens_meningitis (0 records):
+
+
+# human_pathogens_gastroenteritis (0 records):
+
+
+# human_pathogens_diarrhea (0 records):
+
+
+# human_pathogens_all (2 records):
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Xanthobacteraceae; g__Afipia; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Xanthomonadales; f__Xanthomonadaceae; g__Stenotrophomonas; s__
+
+
+# fish_parasites (0 records):
+
+
+# human_gut (0 records):
+
+
+# human_associated (2 records):
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Xanthobacteraceae; g__Afipia; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Xanthomonadales; f__Xanthomonadaceae; g__Stenotrophomonas; s__
+
+
+# mammal_gut (0 records):
+
+
+# animal_parasites_or_symbionts (4 records):
+    d__Bacteria; p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Prevotellaceae; g__Prevotella; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Xanthobacteraceae; g__Afipia; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacterales; f__Pasteurellaceae; g__; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Xanthomonadales; f__Xanthomonadaceae; g__Stenotrophomonas; s__
+
+
+# plant_pathogen (0 records):
+
+
+# oil_bioremediation (0 records):
+
+
+# aromatic_hydrocarbon_degradation (2 records):
+    d__Bacteria; p__Actinobacteria; c__Actinobacteria; o__Mycobacteriales; f__Nocardiaceae; g__Rhodococcus; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Corynebacteriales; f__Nocardiaceae; g__Rhodococcus; s__
+
+
+# aromatic_compound_degradation (4 records):
+    d__Bacteria; p__Actinobacteria; c__Actinobacteria; o__Mycobacteriales; f__Nocardiaceae; g__Rhodococcus; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Corynebacteriales; f__Nocardiaceae; g__Gordonia; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Corynebacteriales; f__Nocardiaceae; g__Rhodococcus; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Moraxellaceae; g__Acinetobacter; s__
+
+
+# aliphatic_non_methane_hydrocarbon_degradation (2 records):
+    d__Bacteria; p__Actinobacteria; c__Actinobacteria; o__Mycobacteriales; f__Nocardiaceae; g__Rhodococcus; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Corynebacteriales; f__Nocardiaceae; g__Rhodococcus; s__
+
+
+# hydrocarbon_degradation (4 records):
+    d__Bacteria; p__Actinobacteria; c__Actinobacteria; o__Mycobacteriales; f__Nocardiaceae; g__Rhodococcus; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Corynebacteriales; f__Nocardiaceae; g__Rhodococcus; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Methylococcales; f__Methylococcaceae; g__Methyloparacoccus; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Halomonadaceae; g__Halomonas; s__
+
+
+# dark_iron_oxidation (0 records):
+
+
+# iron_respiration (0 records):
+
+
+# nitrate_respiration (2 records):
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Rhodocyclaceae; g__Thauera; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Xanthomonadales; f__Xanthomonadaceae; g__Stenotrophomonas; s__
+
+
+# nitrate_reduction (4 records):
+    d__Bacteria; p__Firmicutes; c__Negativicutes; o__Veillonellales-Selenomonadales; f__Veillonellaceae; g__Veillonella; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Burkholderiaceae; g__Cupriavidus; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Rhodocyclaceae; g__Thauera; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Xanthomonadales; f__Xanthomonadaceae; g__Stenotrophomonas; s__
+
+
+# nitrogen_respiration (2 records):
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Rhodocyclaceae; g__Thauera; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Xanthomonadales; f__Xanthomonadaceae; g__Stenotrophomonas; s__
+
+
+# fumarate_respiration (0 records):
+
+
+# intracellular_parasites (4 records):
+    d__Bacteria; p__Chlamydiota; c__Chlamydiia; o__Chlamydiales; f__Parachlamydiaceae; g__Candidatus Protochlamydia; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rickettsiales; f__AB1; g__; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rickettsiales; f__Mitochondria; g__; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rickettsiales; f__Mitochondria; g__Incertae Sedis; s__
+
+
+# chlorate_reducers (0 records):
+
+
+# predatory_or_exoparasitic (1 records):
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Burkholderiaceae; g__Cupriavidus; s__
+
+
+# chloroplasts (2 records):
+    d__Bacteria; p__Cyanobacteria; c__Cyanobacteriia; o__Chloroplast; f__; g__; s__
+    d__Bacteria; p__Cyanobacteria; c__Cyanobacteriia; o__Chloroplast; f__Incertae Sedis; g__Incertae Sedis; s__
+
+
+# nonphotosynthetic_cyanobacteria (0 records):
+
+
+# photosynthetic_cyanobacteria (0 records):
+
+
+# anoxygenic_photoautotrophy_H2_oxidizing (0 records):
+
+
+# anoxygenic_photoautotrophy_S_oxidizing (0 records):
+
+
+# anoxygenic_photoautotrophy_Fe_oxidizing (0 records):
+
+
+# anoxygenic_photoautotrophy (0 records):
+
+
+# oxygenic_photoautotrophy (0 records):
+
+
+# photoautotrophy (0 records):
+
+
+# aerobic_anoxygenic_phototrophy (0 records):
+
+
+# photoheterotrophy (1 records):
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Xanthobacteraceae; g__Rhodopseudomonas; s__
+
+
+# phototrophy (1 records):
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Xanthobacteraceae; g__Rhodopseudomonas; s__
+
+
+# plastic_degradation (0 records):
+
+
+# ureolysis (4 records):
+    d__Bacteria; p__Planctomycetes; c__Planctomycetes; o__Isosphaerales; f__Isosphaeraceae; g__Singulisphaera; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Azospirillales; f__Azospirillaceae; g__Azospirillum; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Rhizobiaceae; g__Mesorhizobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Xanthobacteraceae; g__Afipia; s__
+
+
+# reductive_acetogenesis (0 records):
+
+
+# chemoheterotrophy (49 records):
+    d__Bacteria; p__Acidobacteria; c__Acidobacteriae; o__Acidobacteriales; f__Acidobacteriaceae (Subgroup 1); g__Edaphobacter; s__
+    d__Bacteria; p__Acidobacteria; c__Acidobacteriae; o__Bryobacterales; f__Bryobacteraceae; g__Bryobacter; s__
+    d__Bacteria; p__Actinobacteria; c__Actinobacteria; o__Micrococcales; f__Microbacteriaceae; g__; s__
+    d__Bacteria; p__Actinobacteria; c__Actinobacteria; o__Mycobacteriales; f__Mycobacteriaceae; g__Mycobacterium; s__
+    d__Bacteria; p__Actinobacteria; c__Actinobacteria; o__Mycobacteriales; f__Nocardiaceae; g__Rhodococcus; s__
+    d__Bacteria; p__Actinobacteria; c__Actinobacteria; o__Mycobacteriales; f__Nocardiaceae; g__Williamsia; s__
+    d__Bacteria; p__Actinobacteria; c__Thermoleophilia; o__Solirubrobacterales; f__Solirubrobacteraceae; g__Patulibacter; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Corynebacteriales; f__Mycobacteriaceae; g__Mycobacterium; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Corynebacteriales; f__Nocardiaceae; g__Gordonia; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Corynebacteriales; f__Nocardiaceae; g__Rhodococcus; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Corynebacteriales; f__Nocardiaceae; g__Williamsia; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Micrococcales; f__Intrasporangiaceae; g__Phycicoccus; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Micrococcales; f__Microbacteriaceae; g__; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Micrococcales; f__Microbacteriaceae; g__Leifsonia; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Micrococcales; f__Micrococcaceae; g__Kocuria; s__
+    d__Bacteria; p__Actinobacteriota; c__Actinobacteria; o__Propionibacteriales; f__Nocardioidaceae; g__Marmoricola; s__
+    d__Bacteria; p__Bacteroidetes; c__Bacteroidia; o__Bacteroidales; f__Porphyromonadaceae; g__Porphyromonas; s__
+    d__Bacteria; p__Bacteroidetes; c__Bacteroidia; o__Flavobacteriales; f__Weeksellaceae; g__Cloacibacterium; s__
+    d__Bacteria; p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Lactococcus; s__
+    d__Bacteria; p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__
+    d__Bacteria; p__Firmicutes; c__Bacilli; o__Paenibacillales; f__Paenibacillaceae; g__Paenibacillus; s__
+    d__Bacteria; p__Firmicutes; c__Clostridia; o__Lachnospirales; f__Lachnospiraceae; g__Oribacterium; s__
+    d__Bacteria; p__Firmicutes; c__Negativicutes; o__Veillonellales-Selenomonadales; f__Veillonellaceae; g__Veillonella; s__
+    d__Bacteria; p__Planctomycetes; c__Planctomycetes; o__Isosphaerales; f__Isosphaeraceae; g__Singulisphaera; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Azospirillales; f__Azospirillaceae; g__Azospirillum; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Caulobacterales; f__Caulobacteraceae; g__Caulobacter; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Hyphomicrobiales; f__Hyphomicrobiaceae; g__Hyphomicrobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Reyranellales; f__Reyranellaceae; g__Reyranella; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Beijerinckiaceae; g__Bosea; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Devosiaceae; g__Devosia; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Hyphomicrobiaceae; g__Hyphomicrobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Labraceae; g__Labrys; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Rhizobiaceae; g__Mesorhizobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Xanthobacteraceae; g__Bradyrhizobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Xanthobacteraceae; g__Rhodopseudomonas; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Sphingomonadales; f__Sphingomonadaceae; g__; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Sphingomonadales; f__Sphingomonadaceae; g__Novosphingobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Sphingomonadales; f__Sphingomonadaceae; g__Sphingobium; s__
+    d__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Sphingomonadales; f__Sphingomonadaceae; g__Sphingomonas; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Burkholderiaceae; g__Cupriavidus; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Methylophilaceae; g__; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Burkholderiales; f__Rhodocyclaceae; g__Thauera; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Methylococcales; f__Methylococcaceae; g__Methyloparacoccus; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Halomonadaceae; g__Halomonas; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Moraxellaceae; g__Acinetobacter; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Pseudomonadaceae; g__Pseudomonas; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Salinisphaerales; f__Solimonadaceae; g__Nevskia; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Xanthomonadales; f__Rhodanobacteraceae; g__Rhodanobacter; s__
+    d__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Xanthomonadales; f__Xanthomonadaceae; g__Stenotrophomonas; s__
+
+

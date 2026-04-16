@@ -1,0 +1,111 @@
+ONTOLOGY SOURCE REFERENCE
+Term Source Name	EFO	CRO	OSD	MESH	OBI
+Term Source File	http://data.bioontology.org/ontologies/EFO		https://osdr.nasa.gov/		http://data.bioontology.org/ontologies/OBI
+Term Source Version	132		1.0		29
+Term Source Description	Experimental Factor Ontology		User defined terms		Ontology for Biomedical Investigations
+INVESTIGATION
+Investigation Identifier	
+Investigation Title	
+Investigation Description	
+Investigation Submission Date	
+Investigation Public Release Date	
+INVESTIGATION PUBLICATIONS
+Investigation PubMed ID
+Investigation Publication DOI
+Investigation Publication Author List
+Investigation Publication Title
+Investigation Publication Status
+Investigation Publication Status Term Accession Number
+Investigation Publication Status Term Source REF
+INVESTIGATION CONTACTS
+Investigation Person Last Name
+Investigation Person First Name
+Investigation Person Mid Initials
+Investigation Person Email
+Investigation Person Phone
+Investigation Person Fax
+Investigation Person Address
+Investigation Person Affiliation
+Investigation Person Roles
+Investigation Person Roles Term Accession Number
+Investigation Person Roles Term Source REF
+STUDY
+Study Identifier	OSD-65
+Study Title	Microbial Observatory (ISS-MO): Microbial diversity
+Study Description	The environmental microbiome study was designed to decipher microbial diversity of the International Space Station surfaces in terms of spatial and temporal distributions using 16S and ITS iTag Illumina sequencing. We hypothesized that the microbial population of environmental surfaces changes in time due to astronauts' activity and might be location specific. The environmental samples were collected with the polyester wipes from eight different locations in the ISS during two consecutive sampling sessions (three months apart). The specific objective was to unveil the viable microbial diversity of each location during two separate sessions in terms of abundance and richness of the communities. The International Space Station (ISS) as a closed built environment has its own environmental microbiome which is shaped by microgravity, radiation, and limited human presence. The microbial diversity associated with ISS environmental surfaces was investigated during this study. Polyester wipes and contact slides were used for sampling of eight various surface locations on the ISS at different time periods. The samples were retrieved and analyzed immediately upon the return to the Earth (via Soyuz TMA-14M or Dragon capsule from SpaceX). After surface sample collection, contact slides containing nutrient media for the growth of bacteria and fungi were incubated at 25C. The polyester wipes were processed to measure microbial burden (R2A, Blood Agar, and Potato Dextrose Agar) and recover cultivable bacteria as well as fungi. Subsequently, viable microbial burden was assessed using Adenosine Triphosphate (ATP) assay, and quantitative polymerase chain reaction (PCR) methods after propidium monoazide (PMA) treatment. The 16S-tag and metagenome analyses were used to elucidate viable microbial diversity. The cultivable bacterial population yield from the polyester wipes was very high (5 to 7-logs) when compared with the contact slides (102 to 103 CFU/m2). The PMA-qPCR analysis showed considerable variation of viable bacterial population (105 to 109 16S rDNA gene copies/m2) among locations sampled. Unlike contact slides, polyester wipes cover much larger sample surface (~1 m2) and produce much more reliable results of the microbial diversity of the ISS covering both cultivable and non-cultivable species. The cultivable, total, and viable microbial diversity was determined utilizing state-of-the art molecular techniques. The implementation of the PMA assay before DNA extraction allowed distinguishing viable microorganisms, which is crucial for determining their role to the crew health, the ISS maintenance and the general knowledge of the closed environmentally controlled built systems.
+Study Submission Date	03-Mar-2016
+Study Public Release Date	07-Jul-2016
+Study File Name	s_OSD-65.txt
+Comment[Acknowledgments]	We thank Aleksandra Checinska.
+Comment[DOI]	10.26030/k2s7-ke78
+Comment[Data Source Accession]	
+Comment[Data Source Link]	
+Comment[Experiment Platform]	International Space Station (ISS)
+Comment[Flight Program]	International Space Station (ISS)
+Comment[Funding]	NASA under NNH12ZTT001N grant no. 19-12829-26
+Comment[Identifiers]	
+Comment[Managing NASA Center]	Jet Propulsion Laboratory (JPL)
+Comment[Mission End]	02/11/2015, 05/21/2015
+Comment[Mission Link]	https://osdr.nasa.gov/bio/repo/data/missions/SpaceX-5, https://osdr.nasa.gov/bio/repo/data/missions/SpaceX-6
+Comment[Mission Name]	SpaceX-5, SpaceX-6
+Comment[Mission Start]	01/10/2015, 04/14/2015
+Comment[Project Identifier]	Microbial Tracking-1A, Microbial Tracking-1B
+Comment[Project Link]	https://nlsp.nasa.gov/view/lsdapub/lsda_experiment/c4df82ca-6b22-5b77-9515-722c0ac999c3
+Comment[Project Title]	ISS-MO
+Comment[Project Type]	Spaceflight Study
+Comment[Space Program]	NASA
+Comment[Study Grant Number]	
+STUDY DESIGN DESCRIPTORS
+Study Design Type	16S	ITS
+Study Design Type Term Accession Number	https://osdr.nasa.gov/	https://osdr.nasa.gov/
+Study Design Type Term Source REF	OSD	OSD
+STUDY PUBLICATIONS
+Study PubMed ID	30955503
+Study Publication DOI	10.1186/s40168-019-0666-x
+Study Publication Author List	Checinska Sielaff Aleksandra, Urbaniak Camilla, Mohan Ganesh Babu Malli, Stepanov Victor G., Tran Quyen, Wood Jason M., Minich Jeremiah, McDonald Daniel, Mayer Teresa, Knight Rob, Karouia Fathi, Fox George E., Venkateswaran Kasthuri
+Study Publication Title	Characterization of the total and viable bacterial and fungal communities associated with the International Space Station surfaces
+Study Publication Status	published
+Study Publication Status Term Accession Number	http://www.ebi.ac.uk/efo/EFO_0001796
+Study Publication Status Term Source REF	EFO
+Comment[Study Publication Link]	http://link.springer.com/content/pdf/10.1186/s40168-019-0666-x.pdf
+STUDY FACTORS
+Study Factor Name	Spaceflight
+Study Factor Type	Space Flight
+Study Factor Type Term Accession Number	http://purl.bioontology.org/ontology/MESH/D013026
+Study Factor Type Term Source REF	MESH
+STUDY ASSAYS
+Study Assay File Name	a_OSD-65_amplicon-sequencing_its_illumina.txt	a_OSD-65_amplicon-sequencing_16s_illumina.txt
+Study Assay Measurement Type	Amplicon Sequencing	Amplicon Sequencing
+Study Assay Measurement Type Term Accession Number	http://www.ebi.ac.uk/efo/EFO_0003747	http://www.ebi.ac.uk/efo/EFO_0003747
+Study Assay Measurement Type Term Source REF	EFO	EFO
+Study Assay Technology Type	ITS	16S
+Study Assay Technology Type Term Accession Number	http://purl.bioontology.org/ontology/LNC/MTHU060380	http://purl.bioontology.org/ontology/MESH/D012336
+Study Assay Technology Type Term Source REF		MESH
+Study Assay Technology Platform	Illumina	Illumina
+STUDY PROTOCOLS
+Study Protocol Name	Nucleic Acid Extraction	Library Construction	Nucleic Acid Sequencing	GeneLab raw data processing protocol	GeneLab amplicon-seq data processing protocol	sample collection
+Study Protocol Type	Nucleic Acid Extraction	Library Construction	Nucleic Acid Sequencing	data transformation	data transformation	sample collection
+Study Protocol Type Term Accession Number				http://purl.obolibrary.org/obo/OBI_0200000	http://purl.obolibrary.org/obo/OBI_0200000	
+Study Protocol Type Term Source REF				OBI	OBI	OBI
+Study Protocol Description	Sample processing took place in a ISO 7 (10K class) clean-room at JPL. In a certified biosafety cabinet, each wipe was aseptically removed from the zip lock bag and transferred to a 500 mL bottle containing 200 mL of sterile phosphate-buffered saline (PBS; pH 7.4). The bottle with the wipe was shaken for 2 min followed by concentration with a Concentrating Pipette (Innova Prep, Drexel, MO) using a 0.22 μm Hollow Fiber Polysulfone tips (Cat  : CC08022). Each sample was concentrated to 4 mL with PBS elution fluid. Then, 3 mL of this concentrated sample was split into two 1.5 mL aliquots. One aliquot was treated with PMA (18.25 μL of 2 mM PMA, resulting in a final concentration of 25 μM) to assess cells that were viable or had an intact cell membrane, while the second aliquot was handled in a similar manner but without the addition of PMA. The PMA and non-PMA-treated aliquots were incubated in the dark at RT for 5 min, followed by 15 min of photoactivation using the PMA-LiteTM LED Photolysis Device, specifically designed for photoactivation of PMA (Biotium, Hayward, CA). The PMA- and non-PMA -treated aliquots were then split into two 0.75 mL aliquots. One aliquot was transferred to bead beating tubes containing Lysing Matrix E (MP Biomedicals, Santa Ana, CA), followed by bead beating for 60 s using the vortex sample holder (MO Bio, Carlsbad, CA). The bead-beaten aliquot and the aliquot without bead beating were combined for their corresponding PMA-treated and non-treated samples. DNA extraction was performed with the Maxwell 16 automated system (Promega, Madison, WI), in accordance with manufacture instructions using the Maxwell 16 Tissue LEV Total RNA purification kit. A Maxwell control (MC) without any sample added in its cartridge was run concurrently with each flight sample. The extracted DNA was eluted in 50 μL of water and stored at − 20 °C until further analysis.	Bacterial diversity was assessed by analyzing the V4 hypervariable region of the 16S rRNA gene coding sequence. Amplification was performed with the following primer pair: forward primer, A519F (new nomenclature: S-D-Arch-0519-a-S-15), 5′-CAG CMG CCG CGG TAA-3′, and the reverse primer 802R (new nomenclature: S-D-Bact-0785-b-A-18,) 5′-TAC NVG GGT ATC TAA TCC-3′. Expected amplicon size is 283 for Bacteria as estimated for 16S rRNA gene sequences deposited in the Silva SEED Reference Database. Fungal diversity was assessed by analyzing the ITS1 region between 18S and 5.8S rRNA coding sequences. Amplification primers were ITS1-F_KYO2 (5′-TAG AGG AAG TAA AAG TCG TAA-3′) and ITS2_KYO2 (5′-TTY RCT RCG TTC TTC ATC-3′). Expected amplicon length distribution is 271 ± 90 bp for Ascomycota, 284 ± 42 bp for Basidiomycota, and 216 ± 94 bp for non-Dikarya species. PCR synthesis of SSU-V4 and ITS1 amplicons was performed using Q5 High-Fidelity PCR Kit (New England Biolabs, Ipswich, MA) according to the manufacturer’s instructions. The 40-μL reaction mixtures were incubated under the following conditions: initial denaturation at 94 ° C for3 min followed by 35cycles of 94°C for 30s, 47°C for 30 s, and 72 °C for 90 s, with a final extension at 72 °C for 5 min. Afterwards, each reaction mixture was fractionated by electrophoresis on 2% agarose gel, recovering all PCR products in the size range of 200 to 400 bp. The amplicons were isolated from gel slices using silica spin-columns, and eluted with nano-pure water. The purified amplicons were tagged with barcoded Illumina adapters using TruSeq DNA PCR-Free Library Prep Kit LT (Illumina, San Diego, CA) according to the manufacturer’s instructions. The libraries were quantified on a TBS-380 Fluorimeter (Turner BioSystems, Sunnyvale, CA) using PicoGreen dye (Invitrogen, Carlsbad, CA) as a dsDNA-binding fluorogenic reagent. The dsDNA length distribution in individual library preps was assessed by analysis on a 2100 Bioanalyzer with High Sensitivity DNA chip (Agilent Technologies, Santa Clara, CA). The libraries were pooled to be present at equimolar concentrations in each mixed sample with total concentration of 10 nM. The first mixed sample contained 20 16S rRNA-V4 libraries and 17 ITS1 libraries representing the first ISS sampling session together with corresponding controls. The second mixed sample contained 21 16S rRNA-V4 libraries and 20 ITS1 libraries representing the second ISS sampling session and corresponding controls.	The two sample sets were sequenced on a NextSeq 500 Sequencing System (Illumina, San Diego, CA) with NextSeq 500/550 Mid-Output v2 Kit for 300 main and 6 index cycles.	Fastq format was checked with fastq_utils v0.25.1. Quality assessment of reads was performed with FastQC v0.11.9 and reports were combined with MultiQC v1.12.	Data were processed as described in GL-DPPD-7104-A (https://github.com/nasa/GeneLab_Data_Processing/blob/master/Amplicon/Illumina/Pipeline_GL-DPPD-7104_Versions/GL-DPPD-7104-A.md), using workflow SW_AmpIllumina v1.1.0 (https://github.com/nasa/GeneLab_Data_Processing/tree/SW_AmpIllumina-A_1.1.0/Amplicon/Illumina/Workflow_Documentation/SW_AmpIllumina-A). This dataset had 16S and ITS primers mixed in each fastq file. These were first separated with cutadapt v3.4 (see 'split-by-primers.sh' in the included 'processing_info.zip'). For both 16S and ITS subsets, quality assessment of filtered reads was performed with FastQC v0.11.9 and reports were combined with MultiQC v1.9. DADA2 v1.20.0 was utilized for quality-trimming and filtering and inference of amplicon sequence variants (ASVs), For the 16S data, taxonomy was assigned with DECIPHER v2.20 using the SILVA r138 reference database. For the ITS data, taxonomy was assigned with DECIPHER v2.20 using the UNITE v2020 reference database.	Sampling wipes were prepared at the Jet Propulsion Laboratory (JPL; Pasadena, CA). Briefly, each polyester wipe (9′′ × 9′′; ITW Texwipe, Mahwah, NJ) was folded two times and soaked in 15 mL of sterile molecular grade water (Sigma-Aldrich, St. Louis, MO) for 30 min followed by the transfer to a sterile zip lock bag. The sampling kit was assembled at NASA Ames Research Center (ARC, Moffett Field, CA). The implementation team at NASA ARC delivered the kit to the Cargo Mission Contract at Johnson Space Center (Texas) which was then transferred to Kennedy Space Center (Florida) in order to be loaded into the Space Exploration Technologies (SpaceX) Dragon space- craft prior to launch. Briefly, each sampling kit was sent to International Space Station as a part of the Space-X cargo, and returned to the Earth on Soyuz TM-14 or Dragon capsule. The kits were delivered to JPL immediately after the arrival to Earth. During each sampling session on the ISS, only one astronaut collected samples from eight different locations using wipes and contact slides. Each wipe was used to collect a sample of one-meter square. The control wipe (environmental control) was only taken out from the Zip lock bag, unfolded and packed back to the zip lock. The samples were stored at 4 C until the return trip to Earth and subsequent processing.
+Study Protocol URI						
+Study Protocol Version						
+Study Protocol Parameters Name		Primer Info;Library Layout;Library Selection	Sequencing Instrument	Read Depth;MultiQC File Names;Raw Sequence Data	README;trimmed sequence data;Filtered Sequence Data;Final Outputs;Processing Info;FastQC Outputs	Sample Preservation Method;Sample Storage Temperature;Collection Dates
+Study Protocol Parameters Name Term Accession Number		;;https://osdr.nasa.gov/		http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl;https://osdr.nasa.gov/;https://osdr.nasa.gov/	https://osdr.nasa.gov/;http://purl.obolibrary.org/obo/OBI_0002569;https://osdr.nasa.gov/;https://osdr.nasa.gov/;https://osdr.nasa.gov/;https://osdr.nasa.gov/	https://genelab-data.ndc.nasa.gov/;https://genelab-data.ndc.nasa.gov/;https://osdr.nasa.gov/
+Study Protocol Parameters Name Term Source REF		;;OSD		;OSD;OSD	OSD;OBI;OSD;OSD;OSD;OSD	;;OSD
+Study Protocol Components Name						
+Study Protocol Components Type						
+Study Protocol Components Type Term Accession Number						
+Study Protocol Components Type Term Source REF						
+STUDY CONTACTS
+Study Person Last Name	Venkateswaran
+Study Person First Name	Kasthuri
+Study Person Mid Initials	
+Study Person Email	kjvenkat@jpl.nasa.gov
+Study Person Phone	
+Study Person Fax	
+Study Person Address	
+Study Person Affiliation	NASA
+Study Person Roles	conceptualization role
+Study Person Roles Term Accession Number	http://purl.org/credit/ontology
+Study Person Roles Term Source REF	CRO
