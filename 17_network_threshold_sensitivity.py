@@ -41,12 +41,14 @@ import pandas as pd
 import numpy as np
 import networkx as nx
 from scipy.stats import spearmanr
+from statsmodels.stats.multitest import multipletests
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.gridspec import GridSpec
 
 OUTPUT_DIR    = config.VERSION_DIR
 P_THRESHOLD   = config.NETWORK_PARAMS['p_threshold']
+USE_FDR       = True   # BH-FDR q < P_THRESHOLD; kept aligned with 09_network_analysis.py
 TOP_N         = 15
 N_RANDOM_ITER = 500   # fewer iterations for speed
 RANDOM_SEED   = config.RANDOM_SEED
@@ -100,11 +102,22 @@ def build_network(genus_rel, top_genera, r_threshold):
     if n == 2:
         corr  = np.array([[1, corr], [corr, 1]])
         pvals = np.array([[0, pvals], [pvals, 0]])
+
+    # Apply BH-FDR correction to upper-triangle p-values (aligned with 09_network_analysis.py).
+    p_flat = pvals[np.triu_indices(n, k=1)]
+    if USE_FDR:
+        _, p_used, _, _ = multipletests(p_flat, method='fdr_bh')
+    else:
+        p_used = p_flat
+    p_adj = np.zeros((n, n))
+    p_adj[np.triu_indices(n, k=1)] = p_used
+    p_adj += p_adj.T
+
     G = nx.Graph()
     G.add_nodes_from(top_genera)
     for i in range(n):
         for j in range(i + 1, n):
-            r, p = corr[i, j], pvals[i, j]
+            r, p = corr[i, j], p_adj[i, j]
             if abs(r) > r_threshold and p < P_THRESHOLD and not np.isnan(r):
                 G.add_edge(top_genera[i], top_genera[j], weight=r)
     return G

@@ -37,9 +37,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
-FAPROTAX_DIR   = Path('/home/laugh/pepper/FAPROTAX_1.2.12')
-COLLAPSE_SCRIPT = FAPROTAX_DIR / 'collapse_table.py'
-FAPROTAX_DB    = FAPROTAX_DIR / 'FAPROTAX.txt'
+FAPROTAX_DIR   = config.FAPROTAX_DIR
+COLLAPSE_SCRIPT = config.FAPROTAX_COLLAPSE_SCRIPT
+FAPROTAX_DB    = config.FAPROTAX_DB
 OUTPUT_DIR     = config.VERSION_DIR
 
 # Plant-relevant functional groups to highlight

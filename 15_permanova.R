@@ -70,7 +70,7 @@ cat(sprintf("  ALL filter: %d samples (Space=%d, Terrestrial=%d)\n",
   nrow(otu), sum(meta$Study_Group == "Space_Flight"),
   sum(meta$Study_Group == "Terrestrial_Soil")))
 
-# ROOT_ZONE filter: Rhizosphere + Plant_Roots + Arcillite
+# ROOT_ZONE filter: Rhizosphere + Plant_Roots + Arcillite  (n=36 Space)
 root_zone_types <- c("Rhizosphere", "Plant_Roots", "Arcillite", "Plant Roots")
 meta_rz <- meta[meta$Study_Group == "Terrestrial_Soil" |
                 (meta$Study_Group == "Space_Flight" &
@@ -80,6 +80,18 @@ cat(sprintf("  ROOT_ZONE filter: %d samples (Space=%d, Terrestrial=%d)\n",
   nrow(meta_rz),
   sum(meta_rz$Study_Group == "Space_Flight"),
   sum(meta_rz$Study_Group == "Terrestrial_Soil")))
+
+# ANALYTICAL ROOT ZONE filter: Plant Roots + Rhizosphere only (n=20 Space)
+# This is the same sample set used for all functional analyses (FAPROTAX, redundancy, etc.)
+analytical_rz_types <- c("Plant Roots", "Plant_Roots", "Rhizosphere")
+meta_arz <- meta[meta$Study_Group == "Terrestrial_Soil" |
+                 (meta$Study_Group == "Space_Flight" &
+                    meta$sample_type %in% analytical_rz_types), , drop = FALSE]
+otu_arz  <- otu_rel[rownames(meta_arz), ]
+cat(sprintf("  ANALYTICAL_ROOT_ZONE filter: %d samples (Space=%d, Terrestrial=%d)\n",
+  nrow(meta_arz),
+  sum(meta_arz$Study_Group == "Space_Flight"),
+  sum(meta_arz$Study_Group == "Terrestrial_Soil")))
 
 # ---------------------------------------------------------------------------
 # 2. PERMANOVA – ALL filter
@@ -96,9 +108,9 @@ R2_all <- perm_all[1, "R2"]
 p_all  <- perm_all[1, "Pr(>F)"]
 
 # ---------------------------------------------------------------------------
-# 3. PERMANOVA – ROOT_ZONE filter
+# 3. PERMANOVA – ROOT_ZONE filter  (n=36 Space, includes Arcillite)
 # ---------------------------------------------------------------------------
-cat("\n[3] PERMANOVA (ROOT_ZONE filter)...\n")
+cat("\n[3] PERMANOVA (ROOT_ZONE filter, n=36 Space)...\n")
 
 bc_rz   <- vegdist(otu_rz, method = "bray")
 meta_rz_df <- as.data.frame(meta_rz)
@@ -109,6 +121,21 @@ print(perm_rz)
 F_rz  <- perm_rz[1, "F"]
 R2_rz <- perm_rz[1, "R2"]
 p_rz  <- perm_rz[1, "Pr(>F)"]
+
+# ---------------------------------------------------------------------------
+# 3b. PERMANOVA – ANALYTICAL ROOT ZONE filter  (n=20 Space = main analysis)
+# ---------------------------------------------------------------------------
+cat("\n[3b] PERMANOVA (ANALYTICAL ROOT ZONE, n=20 Space = main biological comparison)...\n")
+
+bc_arz   <- vegdist(otu_arz, method = "bray")
+meta_arz_df <- as.data.frame(meta_arz)
+perm_arz <- adonis2(bc_arz ~ Study_Group, data = meta_arz_df, permutations = N_PERM)
+cat("  adonis2 result:\n")
+print(perm_arz)
+
+F_arz  <- perm_arz[1, "F"]
+R2_arz <- perm_arz[1, "R2"]
+p_arz  <- perm_arz[1, "Pr(>F)"]
 
 # ---------------------------------------------------------------------------
 # 4. Subsampling validation (ALL filter, Space downsampled to n=20)
@@ -146,19 +173,47 @@ cat(sprintf("  Fraction significant (p<0.05): %.1f%%\n",
   100 * mean(boot_p < 0.05)))
 
 # ---------------------------------------------------------------------------
+# 4b. betadisper – homogeneity of dispersion test
+# ---------------------------------------------------------------------------
+cat("\n[4b] betadisper (dispersion homogeneity) for all three filters...\n")
+
+run_betadisper <- function(bc_dist, meta_df, filter_name) {
+  grp <- factor(meta_df$Study_Group)
+  bd  <- betadisper(bc_dist, grp)
+  bt  <- permutest(bd, permutations = N_PERM)
+  p   <- bt$tab[1, "Pr(>F)"]
+  cat(sprintf("  %s: betadisper p=%.4f  (Space dispersion=%.4f, Terr dispersion=%.4f)\n",
+    filter_name, p,
+    mean(bd$distances[meta_df$Study_Group == "Space_Flight"]),
+    mean(bd$distances[meta_df$Study_Group == "Terrestrial_Soil"])))
+  return(list(p = p,
+              sp_disp = mean(bd$distances[meta_df$Study_Group == "Space_Flight"]),
+              tr_disp = mean(bd$distances[meta_df$Study_Group == "Terrestrial_Soil"])))
+}
+
+bd_all  <- run_betadisper(bc_all,  as.data.frame(meta),     "ALL")
+bd_rz   <- run_betadisper(bc_rz,   meta_rz_df,              "ROOT_ZONE")
+bd_arz  <- run_betadisper(bc_arz,  meta_arz_df,             "ANALYTICAL_ROOT_ZONE")
+
+# ---------------------------------------------------------------------------
 # 5. Save results
 # ---------------------------------------------------------------------------
 cat("\n[5] Saving results...\n")
 
 perm_df <- data.frame(
-  Filter   = c("ALL", "ROOT_ZONE"),
+  Filter   = c("ALL", "ROOT_ZONE\n(incl. Arcillite)", "ANALYTICAL_ROOT_ZONE\n(main analysis)"),
   n_Space  = c(sum(meta$Study_Group == "Space_Flight"),
-               sum(meta_rz$Study_Group == "Space_Flight")),
+               sum(meta_rz$Study_Group == "Space_Flight"),
+               sum(meta_arz$Study_Group == "Space_Flight")),
   n_Terr   = c(sum(meta$Study_Group == "Terrestrial_Soil"),
-               sum(meta_rz$Study_Group == "Terrestrial_Soil")),
-  F_stat   = round(c(F_all,  F_rz),  3),
-  R2       = round(c(R2_all, R2_rz), 4),
-  p_value  = c(p_all, p_rz),
+               sum(meta_rz$Study_Group == "Terrestrial_Soil"),
+               sum(meta_arz$Study_Group == "Terrestrial_Soil")),
+  F_stat      = round(c(F_all,  F_rz,  F_arz),  3),
+  R2          = round(c(R2_all, R2_rz, R2_arz), 4),
+  p_value     = c(p_all, p_rz, p_arz),
+  betadisper_p    = round(c(bd_all$p,  bd_rz$p,  bd_arz$p),  4),
+  Space_dispersion = round(c(bd_all$sp_disp, bd_rz$sp_disp, bd_arz$sp_disp), 4),
+  Terr_dispersion  = round(c(bd_all$tr_disp, bd_rz$tr_disp, bd_arz$tr_disp), 4),
   stringsAsFactors = FALSE
 )
 write.csv(perm_df, file.path(WORKDIR, "SuppS2_PERMANOVA_results.csv"), row.names = FALSE)
@@ -190,22 +245,27 @@ sig_label <- function(p) {
 # Panel A: PERMANOVA R² bar chart
 perm_plot_df <- perm_df %>%
   mutate(Filter_label = c(
-    sprintf("ALL\n(Space n=%d, Terr n=%d)", n_Space[1], n_Terr[1]),
-    sprintf("ROOT_ZONE\n(Space n=%d, Terr n=%d)", n_Space[2], n_Terr[2])
+    sprintf("ALL\n(Space n=%d)", n_Space[1]),
+    sprintf("ROOT_ZONE\n(Space n=%d)", n_Space[2]),
+    sprintf("ANALYTICAL\nROOT_ZONE\n(Space n=%d) ★", n_Space[3])
   ),
   sig = sapply(p_value, sig_label),
-  label = sprintf("F=%.1f\nR²=%.3f\n%s", F_stat, R2, sig))
+  betadisper_sig = sapply(betadisper_p, sig_label),
+  label = sprintf("F=%.1f\nR²=%.3f\n%s\nBD p=%.3f%s",
+                  F_stat, R2, sig, betadisper_p, betadisper_sig))
 
+perm_plot_df$Filter_label <- factor(perm_plot_df$Filter_label, levels = perm_plot_df$Filter_label)
 p1 <- ggplot(perm_plot_df, aes(x = Filter_label, y = R2)) +
-  geom_col(fill = c("#3498db", "#2ecc71"), alpha = 0.8, width = 0.5) +
-  geom_text(aes(label = label), vjust = -0.3, size = 3.5) +
-  scale_y_continuous(limits = c(0, max(perm_plot_df$R2) * 1.5),
+  geom_col(fill = c("#3498db", "#2ecc71", "#e67e22"), alpha = 0.8, width = 0.5) +
+  geom_text(aes(label = label), vjust = -0.2, size = 3.0, lineheight = 0.9) +
+  scale_y_continuous(limits = c(0, max(perm_plot_df$R2) * 1.9),
                      labels = scales::percent_format()) +
   labs(title = "PERMANOVA (Bray-Curtis)",
-       subtitle = sprintf("%d permutations", N_PERM),
+       subtitle = sprintf("%d permutations | ★ = main analysis filter", N_PERM),
        x = "Sample Filter", y = "R² (Variance Explained)") +
-  theme_bw(base_size = 12) +
-  theme(plot.title = element_text(face = "bold"))
+  theme_bw(base_size = 11) +
+  theme(plot.title = element_text(face = "bold"),
+        axis.text.x = element_text(size = 8))
 
 # Panel B: Subsampling F distribution
 sub_plot_df <- data.frame(F_val = boot_F)

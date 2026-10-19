@@ -1,7 +1,7 @@
 r_threshold,Group,n_edges,Top_Hub,Hub_Degree,Rhodanobacter_Degree,R_targeted,R_random,Fragility
-0.3,Space_Flight,12,Bacillus,5,0,0.1542,0.282,1.8293
-0.3,Terrestrial_Soil,29,Rhodanobacter,8,8,0.2583,0.3988,1.5436
-0.4,Space_Flight,12,Bacillus,5,0,0.1542,0.282,1.8293
-0.4,Terrestrial_Soil,29,Rhodanobacter,8,8,0.2583,0.3988,1.5436
-0.5,Space_Flight,8,Pseudomonas,3,0,0.1583,0.2525,1.5947
-0.5,Terrestrial_Soil,19,Rhodanobacter,6,6,0.225,0.3505,1.5578
+0.3,Space_Flight,0,none,0,0,,,
+0.3,Terrestrial_Soil,13,uncultured,5,5,0.1667,0.285,1.71
+0.4,Space_Flight,0,none,0,0,,,
+0.4,Terrestrial_Soil,13,uncultured,5,5,0.1667,0.285,1.71
+0.5,Space_Flight,0,none,0,0,,,
+0.5,Terrestrial_Soil,13,uncultured,5,5,0.1667,0.285,1.71

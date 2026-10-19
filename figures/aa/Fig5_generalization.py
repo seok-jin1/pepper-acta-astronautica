@@ -1,5 +1,5 @@
 """
-Fig 5 — Crop-specific failure mode: divergent lettuce vs pepper signatures.
+Fig 5 — Crop-specific pattern: divergent lettuce vs pepper signatures.
 Reframed from 'replication' to evidence for crop-specific BLSS risk models.
 """
 import sys
@@ -32,7 +32,7 @@ def panel_a_log2fc_sidebyside(ax):
     ax.set_xticks(x); ax.set_xticklabels(pivot.index, rotation=20, ha="right")
     ax.set_ylabel("FAPROTAX Log₂FC (Space / Terrestrial)")
     ax.legend(fontsize=9, loc="upper left")
-    ax.set_title("a) Divergent crop responses: pepper nitrification collapses, "
+    ax.set_title("a) Divergent crop responses: pepper nitrification depletes, "
                  "lettuce enriches", loc="left", fontweight="bold", fontsize=10)
     # Annotate values
     for i, fn in enumerate(pivot.index):
@@ -110,23 +110,24 @@ def panel_c_redundancy_sidebyside(ax):
     ax.set_xticks(x); ax.set_xticklabels(funcs, rotation=15, ha="right")
     ax.set_ylabel("# contributing genera")
     ax.legend(fontsize=7, ncol=2)
-    ax.set_title("c) Redundancy: pepper nitrifiers collapse (4.8→0.2), "
+    ax.set_title("c) Redundancy: pepper nitrifiers drop (4.80→0.10), "
                  "lettuce pattern differs",
                  loc="left", fontweight="bold", fontsize=10)
 
 
 def panel_d_message(ax):
-    """Summary message box — Crop-specific failure mode implication."""
+    """Summary message box — Crop-specific pattern implication."""
     ax.axis("off")
     msg = (
-        "Crop-specific failure modes:\n\n"
-        "• Pepper (OSD-772) shows catastrophic nitrification\n"
-        "  collapse (Log₂FC = −10.68, 4.8 → 0.2 genera).\n\n"
-        "• Lettuce (OSD-267+269) shows the opposite:\n"
-        "  nitrification Log₂FC = +11.45 in Space.\n\n"
-        "• Conclusion: BLSS biological risk models built\n"
-        "  on a single crop cannot be generalized.\n"
-        "  Per-crop microbiome profiling is required.\n"
+        "Crop-specific nitrification patterns:\n\n"
+        "• Pepper (OSD-772): nitrification depletion\n"
+        "  (Log₂FC = −13.08, 4.80 → 0.10 genera).\n\n"
+        "• Lettuce (OSD-267+269): opposite direction\n"
+        "  (nitrification Log₂FC = +11.45 in Space;\n"
+        "  n=4 per condition, directional only).\n\n"
+        "• Implication: BLSS biological risk models built\n"
+        "  on a single crop may not generalize.\n"
+        "  Per-crop microbiome profiling is warranted.\n"
     )
     ax.text(0.02, 0.98, msg, transform=ax.transAxes, fontsize=10,
             va="top", family="sans-serif",
@@ -144,7 +145,7 @@ def main():
     panel_c_redundancy_sidebyside(axes[1, 0])
     panel_d_message(axes[1, 1])
     plt.tight_layout()
-    fig.suptitle("Figure 5. Crop-specific failure mode — pepper and lettuce diverge",
+    fig.suptitle("Figure 5. Crop-specific pattern — pepper and lettuce diverge",
                  fontsize=13, fontweight="bold", y=1.01)
     out = OUT / "Fig5_crop_specific"
     fig.savefig(str(out) + ".png", dpi=300, bbox_inches="tight")

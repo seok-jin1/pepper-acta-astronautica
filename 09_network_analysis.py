@@ -39,7 +39,7 @@ import matplotlib.patches as mpatches
 OUTPUT_DIR = config.VERSION_DIR
 R_THRESHOLD = 0.4   # relaxed from 0.6 (genus-level is inherently less granular than ASV)
 P_THRESHOLD = 0.05
-USE_FDR     = False  # raw p < 0.05; FDR is over-conservative for 105 pairs (15-node network)
+USE_FDR     = True   # BH-FDR q < 0.05 applied to 105 pairwise tests
 TOP_N = 15
 
 # ─────────────────────────────────────────────
@@ -311,8 +311,12 @@ def run_subsampling_validation(sp_rel, top_genera,
             pvals = np.array([[0, pvals], [pvals, 0]])
 
         p_flat   = pvals[np.triu_indices(n_gen, k=1)]
+        if USE_FDR:
+            _, p_corrected, _, _ = multipletests(p_flat, method='fdr_bh')
+        else:
+            p_corrected = p_flat
         p_adj    = np.zeros((n_gen, n_gen))
-        p_adj[np.triu_indices(n_gen, k=1)] = p_flat
+        p_adj[np.triu_indices(n_gen, k=1)] = p_corrected
         p_adj   += p_adj.T
 
         G = nx.Graph()

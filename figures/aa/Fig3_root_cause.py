@@ -64,7 +64,7 @@ def panel_b_gtdb_matrix(ax):
                 annot=True, fmt="d", annot_kws={"fontsize": 10})
     ax.set_xlabel("N-cycle gene (product-description)")
     ax.set_ylabel("")
-    ax.set_title("b) GTDB/NCBI genome-level gene evidence",
+    ax.set_title("b) NCBI RefSeq genome-level gene evidence",
                  loc="left", fontweight="bold")
     for tick in ax.get_yticklabels():
         tick.set_fontstyle("italic")
@@ -120,8 +120,6 @@ def main():
     panel_a_redundancy(fig.add_subplot(gs[0, 0]))
     panel_b_gtdb_matrix(fig.add_subplot(gs[0, 1]))
     panel_c_pgp(fig.add_subplot(gs[0, 2]))
-    fig.suptitle("Figure 3. Functional redundancy loss with genome-level gene evidence",
-                 fontsize=13, fontweight="bold", y=1.02)
     out = OUT / "Fig3_root_cause"
     fig.savefig(str(out) + ".png", dpi=300, bbox_inches="tight")
     fig.savefig(str(out) + ".pdf", bbox_inches="tight")

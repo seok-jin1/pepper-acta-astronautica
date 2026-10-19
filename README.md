@@ -71,7 +71,7 @@ This repository contains the complete bioinformatics pipeline used in the study.
 ├── 12_faprotax_analysis.py           # → Fig1b_FAPROTAX_Log2FC.png/.pdf  [Fig 1b]
 ├── 13_bnti_rcbray_analysis.R         # → SuppS2c_BNTI_RCbray.png/.pdf  [Supp Fig S2c]
 ├── 14_functional_redundancy.py       # → Fig1d_FunctionalRedundancy.png/.pdf  [Fig 1d]
-├── 15_permanova.R                    # → SuppS1c_PERMANOVA.png/.pdf  [Supp Fig S1c]
+├── 15_permanova.R                    # → SuppS2_PERMANOVA.png/.pdf  [Supp Fig S2]
 ├── 16_ncycle_pgp_specificity.py      # → Fig1c_NCycle_Heatmap.png/.pdf  [Fig 1c]
 ├── 17_network_threshold_sensitivity.py # → SuppS2b_ThresholdSensitivity.png/.pdf  [Supp Fig S2b]
 ├── rename_r_outputs.sh               # Copy R outputs to current_biology/ naming
@@ -83,7 +83,7 @@ This repository contains the complete bioinformatics pipeline used in the study.
 │   ├── Fig1e_Network.png/.pdf
 │   ├── SuppS1a_FaithPD.png/.pdf
 │   ├── SuppS1b_PICRUSt2_Pathways.png/.pdf
-│   ├── SuppS1c_PERMANOVA.png/.pdf
+│   ├── SuppS2_PERMANOVA.png/.pdf
 │   ├── SuppS1d_Temporal.png/.pdf
 │   ├── SuppS2a_TaxonFunction.png/.pdf
 │   ├── SuppS2b_ThresholdSensitivity.png/.pdf
@@ -258,7 +258,7 @@ All files in `version-2_integrated/` unless otherwise noted. Filenames are prefi
 |----------|--------|---------------|-------------|
 | **S1a** | `10_supp_faith_pd.py` | `SuppS1a_FaithPD.png/.pdf` | — |
 | **S1b** | `07_picrust2_analysis.py` | `SuppS1b_PICRUSt2_Pathways.png/.pdf` | — |
-| **S1c** | `15_permanova.R` | `SuppS1c_PERMANOVA.png/.pdf` | `SuppS1c_PERMANOVA_results.csv`<br>`SuppS1c_PERMANOVA_subsampling.csv` |
+| **S2** | `15_permanova.R` | `SuppS2_PERMANOVA.png/.pdf` | `SuppS2_PERMANOVA_results.csv`<br>`SuppS2_PERMANOVA_subsampling.csv` |
 | **S1d** | `11_supp_temporal.py` | `SuppS1d_Temporal.png/.pdf` | — |
 | **S2a** | `08_taxon_function_corr.py` | `SuppS2a_TaxonFunction.png/.pdf` | — |
 | **S2b** | `17_network_threshold_sensitivity.py` | `SuppS2b_ThresholdSensitivity.png/.pdf` | `SuppS2b_ThresholdSensitivity_Results.csv` |
@@ -286,7 +286,7 @@ Scripts output individual panels to `current_biology/`. Panels are combined manu
 |-------|--------|---------------------------|------------|
 | **S1a** | `10_supp_faith_pd.py` | `SuppS1a_FaithPD.png/.pdf` | Faith's PD: Space 10.05 vs. Terr 24.98 |
 | **S1b** | `07_picrust2_analysis.py` | `SuppS1b_PICRUSt2_Pathways.png/.pdf` | MetaCyc pathway Log₂FC |
-| **S1c** | `15_permanova.R` + `rename_r_outputs.sh` | `SuppS1c_PERMANOVA.png/.pdf` | PERMANOVA R²=0.565, p=0.001 |
+| **S2** | `15_permanova.R` | `SuppS2_PERMANOVA.png/.pdf` | PERMANOVA R²=0.561 (analytical root zone), p=0.001; betadisper p=0.038 |
 | **S1d** | `11_supp_temporal.py` | `SuppS1d_Temporal.png/.pdf` | Q1–Q4 temporal stability |
 
 ### Supplementary Figure S2

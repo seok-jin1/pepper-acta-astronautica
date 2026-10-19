@@ -104,6 +104,15 @@ SUPP_FIG_PREFIX = VERSION_DIR / "SuppS"
 NETWORK_PREFIX = VERSION_DIR / "Network"
 
 # ============================================================================
+# External Tools
+# ============================================================================
+
+import os as _os
+FAPROTAX_DIR             = Path(_os.environ.get('FAPROTAX_DIR', str(BASE_DIR.parent / 'FAPROTAX_1.2.12')))
+FAPROTAX_COLLAPSE_SCRIPT = FAPROTAX_DIR / 'collapse_table.py'
+FAPROTAX_DB              = FAPROTAX_DIR / 'FAPROTAX.txt'
+
+# ============================================================================
 # Analysis Parameters
 # ============================================================================
 
@@ -112,8 +121,8 @@ RANDOM_SEED = 42
 
 # Network analysis parameters
 NETWORK_PARAMS = {
-    "r_threshold": 0.4,        # Spearman |r| > 0.4, raw p < 0.05 (genus-level; Barberán et al., 2012)
-    "p_threshold": 0.05,       # Raw p-value threshold (FDR not applied at genus level; see 10_network_analysis.py)
+    "r_threshold": 0.4,        # Spearman |r| > 0.4 (genus-level; Barberán et al., 2012)
+    "p_threshold": 0.05,       # Significance threshold; BH-FDR applied (q < 0.05) in 09_network_analysis.py and 17_network_threshold_sensitivity.py
     "top_n_asvs": 100,        # Top N most abundant ASVs for network construction
     "min_prevalence": 0.05,   # Minimum proportion of samples ASV must appear in
 }
