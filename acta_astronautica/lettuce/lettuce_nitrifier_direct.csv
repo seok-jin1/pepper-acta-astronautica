@@ -1,0 +1,16 @@
+Subset,Genus,Space_n,Terr_n,Space_prevalence,Terr_prevalence,Space_prevalence_pct,Terr_prevalence_pct,Space_mean_RA,Terr_mean_RA,Log2FC,Cliffs_delta,Fisher_p
+aggregate_n4x4,Nitrosomonas,4,2,0/4,0/2,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+aggregate_n4x4,Nitrosospira,4,2,0/4,0/2,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+aggregate_n4x4,Nitrospira,4,2,0/4,0/2,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+aggregate_n4x4,Nitrobacter,4,2,0/4,0/2,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+aggregate_n4x4,COMPOSITE,4,2,0/4,0/2,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+OSD-267_VEG-01A,Nitrosomonas,2,0,0/2,0/0,0.0,,0.0,,,,NA
+OSD-267_VEG-01A,Nitrosospira,2,0,0/2,0/0,0.0,,0.0,,,,NA
+OSD-267_VEG-01A,Nitrospira,2,0,0/2,0/0,0.0,,0.0,,,,NA
+OSD-267_VEG-01A,Nitrobacter,2,0,0/2,0/0,0.0,,0.0,,,,NA
+OSD-267_VEG-01A,COMPOSITE,2,0,0/2,0/0,0.0,,0.0,,,,NA
+OSD-269_VEG-03A,Nitrosomonas,2,2,0/2,0/2,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+OSD-269_VEG-03A,Nitrosospira,2,2,0/2,0/2,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+OSD-269_VEG-03A,Nitrospira,2,2,0/2,0/2,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+OSD-269_VEG-03A,Nitrobacter,2,2,0/2,0/2,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+OSD-269_VEG-03A,COMPOSITE,2,2,0/2,0/2,0.0,0.0,0.0,0.0,0.0,0.0,1.0

@@ -1,0 +1,11 @@
+Function,Space_Mean,Space_SD,Terr_Mean,Terr_SD,MWU_stat,p_raw,q_BH,sig
+nitrification,0.1,0.3078,4.8,0.7678,0.0,0.0,0.0,***
+cellulolysis,0.0,0.0,1.4,0.6806,0.0,0.0,0.0,***
+aerobic_chemoheterotrophy,22.05,2.7429,37.95,7.7898,16.5,1e-06,2e-06,***
+fermentation,3.75,2.2913,8.85,2.9249,27.5,3e-06,7e-06,***
+nitrogen_fixation,2.1,0.3078,1.3,0.8013,352.0,6e-06,1.1e-05,***
+nitrate_reduction,4.95,0.7592,7.95,2.1637,48.0,2.9e-05,4.9e-05,***
+ureolysis,4.25,0.7164,2.8,1.1517,339.0,9.4e-05,0.000135,***
+sulfate_respiration,0.0,0.0,0.75,0.8507,90.0,0.000151,0.000189,***
+denitrification,0.75,0.5501,1.05,0.2236,143.0,0.028164,0.031293,*
+methylotrophy,1.05,0.2236,0.75,0.8507,255.0,0.091989,0.091989,n.s.

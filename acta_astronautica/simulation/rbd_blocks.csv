@@ -1,0 +1,6 @@
+block_id,label,role,n_parallel_taxa,genes,taxa
+OSMOCOTE,NH₄⁺ supply (Osmocote CRF),source,1,—,
+AMO,"Ammonia oxidation (amoA, NH₄⁺ → NO₂⁻)",series,2,amoA,Nitrosomonas;Nitrosospira
+NXR,"Nitrite oxidation (nxrA, NO₂⁻ → NO₃⁻)",series,2,nxrA,Nitrobacter;Nitrospira
+PLANT,Plant NO₃⁻ uptake,sink,1,—,
+DENIT,Denitrification (nirK leak),leak,10,nirK,

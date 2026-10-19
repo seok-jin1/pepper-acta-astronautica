@@ -1,0 +1,7 @@
+r_threshold,Group,n_edges,Top_Hub,Hub_Degree,Rhodanobacter_Degree,R_targeted,R_random,Fragility
+0.3,Space_Flight,0,none,0,0,,,
+0.3,Terrestrial_Soil,13,uncultured,5,5,0.1667,0.285,1.71
+0.4,Space_Flight,0,none,0,0,,,
+0.4,Terrestrial_Soil,13,uncultured,5,5,0.1667,0.285,1.71
+0.5,Space_Flight,0,none,0,0,,,
+0.5,Terrestrial_Soil,13,uncultured,5,5,0.1667,0.285,1.71

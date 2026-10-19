@@ -1,0 +1,4 @@
+Subset,Space_n,Terr_n,Space_mean_%,Terr_mean_%,MWU_p,Cliffs_delta,Hedges_g
+aggregate_n4x4,4,2,60.0,60.0,1.0,0.0,
+OSD-267_VEG-01A,2,0,60.0,NA,NA,NA,NA
+OSD-269_VEG-03A,2,2,60.0,60.0,1.0,0.0,

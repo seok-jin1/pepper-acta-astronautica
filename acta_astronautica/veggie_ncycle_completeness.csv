@@ -1,0 +1,9 @@
+sample_id,Study_Group,n_steps,completeness,present_steps
+Flight_Plant_Root_A,Space_Flight,2,40.0,nitrification;nitrate_reduction
+Flight_Plant_Root_C,Space_Flight,1,20.0,nitrate_reduction
+Ground_Plant_Root_A,Terrestrial_Soil,1,20.0,nitrate_reduction
+Ground_Plant_Root_C,Terrestrial_Soil,0,0.0,
+V03A-Flt_Root_A_S29_L001,Space_Flight,2,40.0,nitrogen_fixation;ureolysis
+V03A-Flt_Root_B_S32_L001,Space_Flight,2,40.0,nitrogen_fixation;ureolysis
+V03A-Ground_Root_A_S37_L001,Terrestrial_Soil,3,60.0,nitrogen_fixation;nitrate_reduction;ureolysis
+V03A-Ground_Root_B_S40_L001,Terrestrial_Soil,3,60.0,nitrogen_fixation;nitrate_reduction;ureolysis

@@ -1,0 +1,4 @@
+Rarefaction_depth,Space_n_retained,Terr_n_retained,Nitrifier_genera_detected,Space_prevalence_%,Terr_prevalence_%,Nitrifier_composite_Log2FC
+1000,20,20,"Nitrosospira, Nitrospira",0.0,95.0,-19.42
+5000,20,20,"Nitrosospira, Nitrospira",0.0,95.0,-19.45
+10000,20,20,"Nitrosospira, Nitrospira",0.0,100.0,-19.41

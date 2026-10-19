@@ -1,0 +1,4 @@
+Subset,n_Space,n_Terr,PERMANOVA_F,PERMANOVA_R2,PERMANOVA_p,Betadisper_p,Space_dispersion,Terr_dispersion
+aggregate_n4x4,4,2,3.337,0.4548,0.136,0.0004,0.3815,0.0635
+OSD-267_VEG-01A,2,0,NA,NA,NA (insufficient n),NA,NA,NA
+OSD-269_VEG-03A,2,2,35.86,0.9472,0.345,0.0,0.0785,0.0635

@@ -1,0 +1,6 @@
+"pair_type","process","n","pct"
+"Space_Flight","undominated_stochastic",4,66.7
+"Space_Flight","homogenizing_dispersal",2,33.3
+"Terrestrial_Soil","homogenizing_dispersal",1,100
+"cross","undominated_stochastic",7,87.5
+"cross","dispersal_limitation",1,12.5

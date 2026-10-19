@@ -1,0 +1,11 @@
+Subset,Metric,Space_n,Terr_n,Space_mean,Terr_mean,Log2FC,Cliffs_delta,Hedges_g,MWU_p
+aggregate_n4x4,Composite nitrifier RA (%),4,2,0.0,0.0,NA,0.0,,1.000e+00
+OSD-269_VEG-03A,Composite nitrifier RA (%),2,2,0.0,0.0,NA,0.0,,1.000e+00
+aggregate_n4x4,N-cycle completeness (%),4,2,60.0,60.0,0.0,0.0,,1.000e+00
+OSD-269_VEG-03A,N-cycle completeness (%),2,2,60.0,60.0,0.0,0.0,,1.000e+00
+aggregate_n4x4,Shannon,4,2,2.2731,2.4044,-0.08,-0.75,-0.768,2.667e-01
+aggregate_n4x4,Observed_ASVs,4,2,34.0,47.5,-0.48,-1.0,-2.926,1.333e-01
+OSD-269_VEG-03A,Shannon,2,2,2.2067,2.4044,-0.12,-1.0,-0.86,3.333e-01
+OSD-269_VEG-03A,Observed_ASVs,2,2,35.0,47.5,-0.44,-1.0,-1.55,3.333e-01
+aggregate_n4x4,Redundancy: nitrification (# genera),4,2,0.0,0.0,NA,0.0,,1.000e+00
+OSD-269_VEG-03A,Redundancy: nitrification (# genera),2,2,0.0,0.0,NA,0.0,,1.000e+00

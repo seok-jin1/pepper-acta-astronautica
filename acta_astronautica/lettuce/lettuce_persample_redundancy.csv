@@ -1,0 +1,7 @@
+,Study_Group,OSD,Mission,nitrification,nitrogen_fixation,denitrification,nitrate_reduction,fermentation,aerobic_chemoheterotrophy,ureolysis,cellulolysis,methylotrophy,sulfate_respiration
+OSD267-FlightRootA,Space_Flight,OSD-267,SpaceX-3,0,2,0,1,0,10,1,0,0,0
+OSD267-FlightRootC,Space_Flight,OSD-267,SpaceX-3,0,2,0,1,0,10,1,0,0,0
+OSD269-FltRootA,Space_Flight,OSD-269,SpaceX-8,0,3,0,1,1,8,2,0,0,0
+OSD269-FltRootB,Space_Flight,OSD-269,SpaceX-8,0,2,0,1,1,7,2,0,0,0
+OSD269-GroundRootA,Terrestrial_Soil,OSD-269,SpaceX-8,0,4,0,2,1,14,5,0,0,0
+OSD269-GroundRootB,Terrestrial_Soil,OSD-269,SpaceX-8,0,4,0,1,0,13,5,0,0,0

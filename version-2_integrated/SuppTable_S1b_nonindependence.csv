@@ -1,0 +1,12 @@
+Diagnostic,Value
+Within-Space mean BC,0.457
+Within-Terrestrial mean BC,0.573
+Between-group mean BC,1.0
+Q-centroid PERMANOVA R² (median),0.697
+Q-centroid PERMANOVA R² 95% CI low,0.608
+Q-centroid PERMANOVA R² 95% CI high,0.778
+Q-centroid PERMANOVA p<0.05 fraction,0.878
+1-per-Q bootstrap PERMANOVA R² (median),0.649
+1-per-Q bootstrap PERMANOVA R² 95% CI low,0.488
+1-per-Q bootstrap PERMANOVA R² 95% CI high,0.77
+1-per-Q bootstrap PERMANOVA p<0.05 fraction,0.869

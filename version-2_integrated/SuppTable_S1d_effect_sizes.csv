@@ -1,0 +1,10 @@
+metric,Space_n,Terr_n,Space_mean,Terr_mean,Log2FC,Cliffs_delta,Hedges_g,MWU_p
+FAPROTAX: nitrification,20,20,8e-06,0.07341,-12.92,-1.0,-3.016,2.0e-08
+FAPROTAX: denitrification,20,20,1e-06,0.000102,-5.46,-0.002,-0.306,1.0e+00
+FAPROTAX: nitrate_reduction,20,20,0.023666,0.006238,1.92,0.74,1.195,6.6e-05
+FAPROTAX: nitrogen_fixation,20,20,0.090663,0.00657,3.79,0.905,2.92,1.0e-06
+FAPROTAX: ureolysis,20,20,0.04905,0.006755,2.86,0.885,2.159,1.8e-06
+FAPROTAX: chemoheterotrophy,20,20,0.388342,0.395713,-0.03,-0.235,-0.235,2.1e-01
+FAPROTAX: fermentation,20,20,0.017059,0.006212,1.46,0.69,1.11,2.0e-04
+FAPROTAX: aromatic_compound_degradation,20,20,0.003973,0.01921,-2.27,-0.9,-1.316,1.2e-06
+N-cycle completeness (5 FAPROTAX categories),20,20,0.76,1.0,NA,-0.95,-3.179,1.3e-08

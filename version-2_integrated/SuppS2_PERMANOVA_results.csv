@@ -1,0 +1,6 @@
+"Filter","n_Space","n_Terr","F_stat","R2","p_value","betadisper_p","Space_dispersion","Terr_dispersion"
+"ALL",106,20,25.821,0.1723,0.001,0.001,0.5694,0.3973
+"ROOT_ZONE
+(incl. Arcillite)",36,20,70.15,0.565,0.001,0.006,0.3046,0.3973
+"ANALYTICAL_ROOT_ZONE
+(main analysis)",20,20,48.613,0.5613,0.001,0.038,0.3066,0.3973

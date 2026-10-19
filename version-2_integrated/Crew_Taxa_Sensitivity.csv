@@ -1,0 +1,3 @@
+Condition,Genera_removed,Nitrifier_RA_Log2FC,Space_prev,Space_n,Terr_prev,Terr_n,Fisher_p,Cliffs_delta
+Full dataset (no removal),0,-12.4160,0,20,19,20,0.0000,-0.9500
+Crew/built-env taxa removed,21,-12.7730,0,20,19,20,0.0000,-0.9500

@@ -1,0 +1,14 @@
+,iss_env_count,pepper_space_count,in_iss_env,in_pepper_space
+Azospirillum,0,0,False,False
+Bacillus,23690,220,True,True
+Bradyrhizobium,10626,149144,True,True
+Burkholderia,0,0,False,False
+Nitrobacter,0,0,False,False
+Nitrosomonas,0,0,False,False
+Nitrosospira,0,0,False,False
+Nitrospira,0,0,False,False
+Paenibacillus,81055,33227,True,True
+Pseudomonas,7883,99852,True,True
+Rhodanobacter,0,17,False,True
+Sphingomonas,19389,353645,True,True
+Variovorax,0,0,False,False

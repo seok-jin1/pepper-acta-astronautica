@@ -1,0 +1,9 @@
+function,Study_Group,n_contributing_genera
+nitrification,Space_Flight,1
+nitrification,Terrestrial_Soil,0
+denitrification,Space_Flight,3
+denitrification,Terrestrial_Soil,4
+nitrogen_fixation,Space_Flight,2
+nitrogen_fixation,Terrestrial_Soil,2
+chemoheterotrophy,Space_Flight,61
+chemoheterotrophy,Terrestrial_Soil,58

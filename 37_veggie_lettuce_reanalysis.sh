@@ -5,8 +5,11 @@ set -euo pipefail
 # OSD-267 (VEG-01A, SpaceX-3) + OSD-269 (VEG-03A, SpaceX-8)
 # Supports Acta Astronautica Prediction P3 (cross-mission generalization)
 
-D=/home/laugh/pepper-aa-work/version-2_integrated/external/veggie_lettuce
-CLASSIFIER=/home/laugh/pepper/classifiers/silva-138-99-515-806-nb-classifier.qza
+# Paths come from config.py. Run from the repository root: the FASTQ paths in
+# manifest.tsv are written relative to $PWD.
+cd "$(dirname "${BASH_SOURCE[0]}")"
+D=$(python -c 'import config; print(config.VEGGIE_LETTUCE_DIR)')
+CLASSIFIER=$(python -c 'import config; print(config.SILVA_V4_CLASSIFIER)')
 EXPORT_DIR="$D/exports"
 mkdir -p "$EXPORT_DIR"
 

@@ -112,6 +112,9 @@ FAPROTAX_DIR             = Path(_os.environ.get('FAPROTAX_DIR', str(BASE_DIR.par
 FAPROTAX_COLLAPSE_SCRIPT = FAPROTAX_DIR / 'collapse_table.py'
 FAPROTAX_DB              = FAPROTAX_DIR / 'FAPROTAX.txt'
 
+# SILVA 138 99% V4 (515F/806R) naive Bayes classifier used by script 37
+SILVA_V4_CLASSIFIER      = Path(_os.environ.get('SILVA_V4_CLASSIFIER', str(BASE_DIR / 'classifiers' / 'silva-138-99-515-806-nb-classifier.qza')))
+
 # ============================================================================
 # Analysis Parameters
 # ============================================================================

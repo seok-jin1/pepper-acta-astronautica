@@ -1,0 +1,7 @@
+p_loss_per_generation,g_to_25pct_failure,g_to_50pct_failure,g_to_75pct_failure
+0.02,23,39,61
+0.05,9,16,24
+0.1,5,8,12
+0.15,3,5,8
+0.2,3,4,6
+0.3,2,3,4

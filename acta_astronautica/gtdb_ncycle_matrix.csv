@@ -1,0 +1,14 @@
+genus,amoA,nxrA,nirK,nirS,nosZ
+Rhodanobacter,0,1,1,0,1
+Nitrosomonas,1,0,1,0,0
+Nitrosospira,1,0,1,0,0
+Nitrospira,0,0,1,0,0
+Nitrobacter,0,1,0,0,1
+Pseudomonas,0,1,1,0,1
+Bradyrhizobium,0,0,1,0,0
+Azospirillum,0,1,1,0,1
+Bacillus,0,0,0,0,0
+Paenibacillus,0,1,0,0,1
+Burkholderia,0,1,1,0,1
+Variovorax,0,1,1,0,0
+Sphingomonas,0,1,1,0,0

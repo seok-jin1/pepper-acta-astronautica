@@ -1,0 +1,13 @@
+Metric,"Pepper (n=20/20, cross-study)","Lettuce (n=4/4, within-study DADA2)",Lettuce OSD-267 VEG-01A (n=2/2),Lettuce OSD-269 VEG-03A (n=2/2),Interpretation
+Direct nitrifier composite prevalence (Space),0/20 (0%),0/4 (0%),0/2 (0%) — ground dropped at depth≥500,0/2 (0%),Flight nitrifier absence reproduced in both crops
+Direct nitrifier composite prevalence (Ground/Terrestrial),19/20 (95%),0/2 (0%) at depth 1000,"0/2 (0%) — too few reads (112, 123)",0/2 (0%),"KEY DIVERGENCE: pepper ground has nitrifiers, lettuce ground does not → Veggie lettuce baseline is pre-depleted"
+Nitrifier composite Log₂FC,"−13.08 (Cliff's δ = −1.00, p = 2e−8)",NA (both conditions 0 → undefined),NA,NA,Lettuce cannot show Log₂FC because baseline (Ground) is zero — GeneLab +11.45 was zero-baseline artifact from single low-count Nitrosomonas ASV
+N-cycle completeness (Space %),76% (Cliff's δ = −0.95),60% (aggregate),60%,60%,Lettuce flight ≈ pepper flight on completeness (both around 60–76%)
+N-cycle completeness (Ground/Terrestrial %),100%,60% (aggregate),N/A (samples dropped),60%,Pepper ground = 100% (full N-cycle); lettuce ground = 60% (identical to flight) → lettuce ground also N-cycle compromised
+Nitrification redundancy (mean # genera),Space 0.10 vs Terr 4.80 (q<0.001),Space 0 vs Terr 0,0 vs N/A,0 vs 0,No nitrifier genera detected in any lettuce sample regardless of condition
+Aerobic chemoheterotrophy redundancy,Space 22.1 vs Terr 38.0,"Space 8.75 vs Terr 13.5 (Cliff's δ = −1.0, p = 0.10)",10 vs N/A,7.5 vs 13.5 (Cliff's δ = −1.0),Both crops show Flight<Ground for non-N functions → general biomass/diversity reduction in flight
+PERMANOVA R² (Bray-Curtis),0.56 (p = 0.001),"0.45 (aggregate n=6 after dropout, p = 0.136)",N/A (ground dropped),"0.95 (p = 0.345, underpowered at n=4)",Directionally consistent composition shift but statistically underpowered in lettuce
+Shannon diversity (Space),2.66,2.27 (aggregate),2.34,2.21,Lettuce Shannon < pepper Shannon by both absolute value and flight-to-ground contrast
+Shannon diversity (Ground/Terrestrial),6.23,2.40 (aggregate n=2),N/A,2.40,Pepper Terrestrial soil is ~3× more diverse than lettuce Ground (consistent with external agricultural soil vs small Veggie pillow)
+βNTI deterministic fraction (Terrestrial within-group),93.2%,"0% (1 pair, homogenizing_dispersal)",N/A (no pairs),See aggregate,Lettuce assembly is fully stochastic in both conditions — but lettuce terrestrial n too small for meaningful comparison
+Rarefaction depth retaining all samples,"All samples ≥10,000 reads",100 reads (depth ≥500 drops 2 OSD-267 ground),"Ground root A=112, C=123 reads — extremely low biomass","All samples >130,000 reads",OSD-267 ground samples have catastrophically low read counts — OSD-267 flight/ground comparison unreliable

@@ -1,0 +1,7 @@
+sample_id,n_steps_present,completeness,present_steps,Study_Group,OSD,Mission
+OSD267-FlightRootA,3,60.0,nitrogen_fixation;nitrate_reduction;ureolysis,Space_Flight,OSD-267,SpaceX-3
+OSD267-FlightRootC,3,60.0,nitrogen_fixation;nitrate_reduction;ureolysis,Space_Flight,OSD-267,SpaceX-3
+OSD269-FltRootA,3,60.0,nitrogen_fixation;nitrate_reduction;ureolysis,Space_Flight,OSD-269,SpaceX-8
+OSD269-FltRootB,3,60.0,nitrogen_fixation;nitrate_reduction;ureolysis,Space_Flight,OSD-269,SpaceX-8
+OSD269-GroundRootA,3,60.0,nitrogen_fixation;nitrate_reduction;ureolysis,Terrestrial_Soil,OSD-269,SpaceX-8
+OSD269-GroundRootB,3,60.0,nitrogen_fixation;nitrate_reduction;ureolysis,Terrestrial_Soil,OSD-269,SpaceX-8

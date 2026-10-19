@@ -105,3 +105,7 @@ Rplots.pdf
 .claude/
 manuscript_aa/
 acta_astronautica/nitrospira_tree/reconstructed/
+
+# Result tables that back numbers in the manuscript stay tracked
+!acta_astronautica/**/*.csv
+!version-2_integrated/*.csv

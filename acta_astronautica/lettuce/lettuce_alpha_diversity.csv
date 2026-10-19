@@ -1,0 +1,13 @@
+sample_id,Study_Group,OSD,Mission,Subset,Observed_ASVs,Shannon,Total_reads
+OSD267-FlightRootA,Space_Flight,OSD-267,SpaceX-3,aggregate_n4x4,35,2.4461,1000
+OSD267-FlightRootC,Space_Flight,OSD-267,SpaceX-3,aggregate_n4x4,31,2.2329,1000
+OSD269-FltRootA,Space_Flight,OSD-269,SpaceX-8,aggregate_n4x4,34,2.1852,1000
+OSD269-FltRootB,Space_Flight,OSD-269,SpaceX-8,aggregate_n4x4,36,2.2282,1000
+OSD269-GroundRootA,Terrestrial_Soil,OSD-269,SpaceX-8,aggregate_n4x4,43,2.2748,1000
+OSD269-GroundRootB,Terrestrial_Soil,OSD-269,SpaceX-8,aggregate_n4x4,52,2.534,1000
+OSD267-FlightRootA,Space_Flight,OSD-267,SpaceX-3,OSD-267_VEG-01A,35,2.4461,1000
+OSD267-FlightRootC,Space_Flight,OSD-267,SpaceX-3,OSD-267_VEG-01A,31,2.2329,1000
+OSD269-FltRootA,Space_Flight,OSD-269,SpaceX-8,OSD-269_VEG-03A,34,2.1852,1000
+OSD269-FltRootB,Space_Flight,OSD-269,SpaceX-8,OSD-269_VEG-03A,36,2.2282,1000
+OSD269-GroundRootA,Terrestrial_Soil,OSD-269,SpaceX-8,OSD-269_VEG-03A,43,2.2748,1000
+OSD269-GroundRootB,Terrestrial_Soil,OSD-269,SpaceX-8,OSD-269_VEG-03A,52,2.534,1000

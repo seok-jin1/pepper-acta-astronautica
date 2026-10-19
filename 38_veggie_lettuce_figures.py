@@ -27,9 +27,9 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).parent))
 import config
 
-FAPROTAX_DIR = Path("/home/laugh/pepper/FAPROTAX_1.2.12")
-COLLAPSE_SCRIPT = FAPROTAX_DIR / "collapse_table.py"
-FAPROTAX_DB = FAPROTAX_DIR / "FAPROTAX.txt"
+FAPROTAX_DIR = config.FAPROTAX_DIR
+COLLAPSE_SCRIPT = config.FAPROTAX_COLLAPSE_SCRIPT
+FAPROTAX_DB = config.FAPROTAX_DB
 
 LETTUCE_DIR = config.VEGGIE_LETTUCE_DIR
 
