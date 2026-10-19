@@ -94,3 +94,13 @@ FAPROTAX_*.zip
 !version-2_integrated/exported_denoising_stats/stats.tsv
 !version-2_integrated/picrust2_out/pathways_out/path_abun_unstrat.tsv.gz
 !version-2_integrated/metacyc_pathways_info.txt.gz
+
+# Snapshot exclusions (2026-10)
+**/*.qza
+**/*.qzv
+**/picrust2_out/intermediate/
+*.RData
+Rplots.pdf
+.pytest_cache/
+.claude/
+manuscript_aa/
