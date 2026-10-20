@@ -4,7 +4,7 @@
 
 *** RECONSTRUCTED SCRIPT (written 2026-10-19, after the 2026-04-23 snapshot) ***
 
-The Nitrospira phylogeny reported in the manuscript (Fig. 10 / Supp. Fig. S1e) was
+The Nitrospira phylogeny reported in the manuscript (Fig. 5) was
 produced with ad-hoc commands that were never saved to this repository. This script
 re-implements that analysis from the Methods description and from the intermediate
 files that were kept:

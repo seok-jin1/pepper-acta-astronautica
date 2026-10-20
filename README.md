@@ -64,12 +64,12 @@ Panels were assembled into the final figures by hand; the files below are the sc
 | **Fig. 2** | Cross-filter PERMANOVA robustness | `version-2_integrated/SuppS2_PERMANOVA.{pdf,png}` | `15_permanova.R` |
 | **Fig. 3** | Q1–Q4 quadrant dynamics of the ISS rhizosphere | `version-2_integrated/SuppS1d_Temporal.{pdf,png}` | `11_supp_temporal.py` |
 | **Fig. 4** | Direct ASV-level detection of nitrifier genera | `figures/aa/Fig_Nitrifier_Direct.{pdf,png}` | `40_nitrifier_direct_analysis.py` |
-| **Fig. 5** | Functional redundancy, RefSeq/PGAP N-cycle gene matrix, PGP-trait entropy | `figures/aa/Fig3_root_cause.{pdf,png}` | `figures/aa/Fig3_root_cause.py` (inputs from `14`, `16`, `36`) |
-| **Fig. 6** | ISS interior-surface reference lacks nitrifier genera | `figures/aa/Fig4_system_consequence.{pdf,png}` | `figures/aa/Fig4_system_consequence.py` (input from `39`) |
-| **Fig. 7** | WGCNA modules of the pepper root zone | `acta_astronautica/pepper_wgcna/SuppS6_WGCNA_combined.{pdf,png}` | `46_pepper_wgcna.R`, `47_pepper_wgcna_visualizations.py` |
-| **Fig. 8** | Reliability block diagram and N mass-balance ODE | `acta_astronautica/simulation/rbd_diagram`, `rbd_reliability_curves`, `ode_trajectories` (`.pdf`/`.png`) | `48_rbd_simulation.py`, `49_nitrogen_ode_simulation.py` |
-| **Fig. 9** | Evidence synthesis and BLSS design considerations | `figures/aa/Fig6_mechanism_synthesis.{pdf,png}` | `figures/aa/Fig6_mechanism_synthesis.py` |
-| **Fig. 10** | Phylogenetic placement of Nitrospira ASVs | `figures/aa/SuppS1e_nitrospira_tree.{pdf,png}` | `50_nitrospira_phylogeny_reconstructed.py`* |
+| **Fig. 5** | Phylogenetic placement of Nitrospira ASVs | `figures/aa/SuppS1e_nitrospira_tree.{pdf,png}` | `50_nitrospira_phylogeny_reconstructed.py`* |
+| **Fig. 6** | Functional redundancy, RefSeq/PGAP N-cycle gene matrix, PGP-trait entropy | `figures/aa/Fig3_root_cause.{pdf,png}` | `figures/aa/Fig3_root_cause.py` (inputs from `14`, `16`, `36`) |
+| **Fig. 7** | ISS interior-surface reference lacks nitrifier genera | `figures/aa/Fig4_system_consequence.{pdf,png}` | `figures/aa/Fig4_system_consequence.py` (input from `39`) |
+| **Fig. 8** | WGCNA modules of the pepper root zone | `acta_astronautica/pepper_wgcna/SuppS6_WGCNA_combined.{pdf,png}` | `46_pepper_wgcna.R`, `47_pepper_wgcna_visualizations.py` |
+| **Fig. 9** | Reliability block diagram and N mass-balance ODE | `acta_astronautica/simulation/rbd_diagram`, `rbd_reliability_curves`, `ode_trajectories` (`.pdf`/`.png`) | `48_rbd_simulation.py`, `49_nitrogen_ode_simulation.py` |
+| **Fig. 10** | Evidence synthesis and BLSS design considerations | `figures/aa/Fig6_mechanism_synthesis.{pdf,png}` | `figures/aa/Fig6_mechanism_synthesis.py` (wording was edited by hand in the final figure) |
 | **Fig. S1** | Exploratory community-assembly proxy | `figures/aa/SuppFig_S4_assembly.{pdf,png}` | `figures/aa/SuppFig_S4_assembly.py` (input from `13`) |
 | **Fig. S2** | Exploratory co-occurrence network and threshold sensitivity | `figures/aa/SuppFig_S5_network.{pdf,png}` | `figures/aa/SuppFig_S5_network.py` (inputs from `09`, `17`) |
 
