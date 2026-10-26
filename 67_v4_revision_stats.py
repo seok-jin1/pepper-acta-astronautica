@@ -12,7 +12,7 @@ Adds to 64/65:
   - power against the canonical field level, a cross-talk check, near-identical field variants, seed screen
   - Nitrobacter resolvability against the SILVA 138 V4-240 reference used to train the classifier
   - an illustrative nitrogen budget (PH-04 fertiliser, crew urine N, alkalinity, reactor size, free ammonia, start-up)
-  - manuscript tables (Table 1, 2, 3, 5) and a per-sample supplementary table, all written from code
+  - manuscript tables (Tables 1-4) and a per-sample supplementary table, all written from code
 
 Inputs : $V4_WORK/{dada2,taxonomy,checkpoint,osd65}, $V4_REF/silva-138-99-{v4-240-seqs,tax}.qza
 Outputs: $V4_WORK/revision/*.tsv, nitrifier_asvs.fasta, numbers.tsv (one row per number quoted in the text)
@@ -479,7 +479,7 @@ budget = pd.DataFrame([
     ("NOB inhibition by free ammonia (0.1–1.0 mg NH3 L⁻¹)", f"total ammonium ≈{tan_for_fa(0.1, 7.0):.0f}–{tan_for_fa(1.0, 7.0):.0f} mg N L⁻¹ at pH 7.0; ≈{tan_for_fa(0.1, 7.5):.0f}–{tan_for_fa(1.0, 7.5):.0f} at pH 7.5 (25 °C)", "Anthonisen et al. 1976"),
     ("Start-up from the observed root-zone level to the field level", f"{b_fd.pooled_RA / b_rz.pooled_RA:,.0f}-fold ≈ {doublings:.0f} doublings; {doublings * math.log(2) / 0.5:.0f}–{doublings * math.log(2) / 0.1:.0f} d at net growth 0.5–0.1 d⁻¹ (cycle: {days} d)", "relative abundance as proxy; Prosser 1989"),
 ], columns=["Quantity", "Value", "Basis"])
-budget.to_csv(OUT / "table5_nitrogen_budget.tsv", sep="\t", index=False)
+budget.to_csv(OUT / "table4_nitrogen_budget.tsv", sep="\t", index=False)
 note("fert_N_quadrant", nq); note("fert_NH4_share", nh4 / nq); note("doublings", doublings)
 
 # ------------------------------------------------------------------ manuscript tables
