@@ -459,7 +459,7 @@ fert = pd.DataFrame([  # Khodadad et al. 2026, Table 1; N split from current pro
     ("Nutricote 14-4-14 (T180)", 5.6, 0.14, 0.075, 0.065)],
     columns=["product", "g_per_quadrant", "N_frac", "NH4N_frac", "NO3N_frac"])
 nq = (fert.g_per_quadrant * fert.N_frac).sum(); nh4 = (fert.g_per_quadrant * fert.NH4N_frac).sum(); no3 = (fert.g_per_quadrant * fert.NO3N_frac).sum()
-area, days, quadrants = 0.2, 137, 4  # 48 seeds at 240 plants m-2; 137 days; 4 quadrants
+area, days, quadrants = 0.2, 137, 4  # APH growing area (Massa et al. 2016); 137 days; 4 quadrants
 n_carrier = nq * quadrants
 urine = (7, 16)  # g N per crew member per day (Verbeelen et al. 2021)
 mol = tuple(u / 14.007 for u in urine)
@@ -471,16 +471,20 @@ def tan_for_fa(fa, ph, t=25):  # Anthonisen et al. 1976: FA (mg NH3 L-1) = 17/14
 doublings = math.log2(b_fd.pooled_RA / b_rz.pooled_RA)
 budget = pd.DataFrame([
     ("PH-04 fertiliser N per quadrant", f"{nq:.2f} g N ({nh4:.2f} g NH4+-N, {nh4 / nq:.0%}; {no3:.2f} g NO3−-N)", "Khodadad et al. 2026 Table 1; product labels"),
-    ("PH-04 fertiliser N per science carrier", f"{n_carrier:.1f} g N on {area} m² = {n_carrier / area:.0f} g N m⁻² per crop cycle ({n_carrier / area / days:.2f} g N m⁻² d⁻¹ over {days} d)", "4 quadrants; 48 seeds at 240 plants m⁻²"),
+    ("PH-04 fertiliser N per science carrier", f"{n_carrier:.1f} g N on {area} m² = {n_carrier / area:.0f} g N m⁻² per crop cycle ({n_carrier / area / days:.2f} g N m⁻² d⁻¹ over {days} d)", "4 quadrants; APH growing area 0.2 m² (Massa et al. 2016)"),
     ("Crew urine N", f"{urine[0]}–{urine[1]} g N per crew member per day = {urine[0] / n_carrier:.1f}–{urine[1] / n_carrier:.1f} PH-04 carrier loads per crew-day", "Verbeelen et al. 2021"),
-    ("Crop area that would take up one crew member's urine N at the PH-04 supply rate", f"{urine[0] / (n_carrier / area / days):.0f}–{urine[1] / (n_carrier / area / days):.0f} m²", "derived"),
+    ("Crop area whose PH-04 fertiliser N equals one crew member's daily urine N (supply-side equivalence; lower bound on the area needed)", f"{urine[0] / (n_carrier / area / days):.0f}–{urine[1] / (n_carrier / area / days):.0f} m²", "derived; crop uptake not measured"),
     ("Alkalinity", f"Ureolysis releases ≈1 eq base per mol N; nitrification consumes 2. Without added base about half of the ammonium is oxidised (NH4+:NO3− ≈ 1:1); full nitrification needs ≈{mol[0]:.1f}–{mol[1]:.1f} mol base per crew-day (≈{koh[0]:.0f}–{koh[1]:.0f} g KOH)", "stoichiometry; Udert & Wächter 2012"),
     ("Upstream reactor size per crew member", f"MELiSSA C-III fixed bed at ≤1.35 kg N m⁻³ d⁻¹: ≈{c3[0]:.0f}–{c3[1]:.0f} L of bed; urine MABR at 1.8 g N m⁻² d⁻¹ (half nitrified): ≈{mabr[0]:.0f}–{mabr[1]:.0f} m² of membrane", "Verbeelen et al. 2021; Gòdia et al. 2002; Udert & Wächter 2012"),
     ("NOB inhibition by free ammonia (0.1–1.0 mg NH3 L⁻¹)", f"total ammonium ≈{tan_for_fa(0.1, 7.0):.0f}–{tan_for_fa(1.0, 7.0):.0f} mg N L⁻¹ at pH 7.0; ≈{tan_for_fa(0.1, 7.5):.0f}–{tan_for_fa(1.0, 7.5):.0f} at pH 7.5 (25 °C)", "Anthonisen et al. 1976"),
     ("Start-up from the observed root-zone level to the field level", f"{b_fd.pooled_RA / b_rz.pooled_RA:,.0f}-fold ≈ {doublings:.0f} doublings; {doublings * math.log(2) / 0.5:.0f}–{doublings * math.log(2) / 0.1:.0f} d at net growth 0.5–0.1 d⁻¹ (cycle: {days} d)", "relative abundance as proxy; Prosser 1989"),
 ], columns=["Quantity", "Value", "Basis"])
 budget.to_csv(OUT / "table4_nitrogen_budget.tsv", sep="\t", index=False)
+t100 = fert[fert["product"] == "Nutricote 14-4-14 (T100)"]  # its label could not be retrieved; the T180 split is assumed for it
+nh4_lo = nh4 - (t100.g_per_quadrant * t100.NH4N_frac).sum()                                       # T100 nitrogen all nitrate
+nh4_hi = nh4_lo + (t100.g_per_quadrant * t100.N_frac).sum()                                       # T100 nitrogen all ammoniacal
 note("fert_N_quadrant", nq); note("fert_NH4_share", nh4 / nq); note("doublings", doublings)
+note("fert_NH4_share_range_if_T100_label_differs", f"{nh4_lo / nq:.0%}-{nh4_hi / nq:.0%}")
 
 # ------------------------------------------------------------------ manuscript tables
 track = pd.read_csv(WORK / "dada2" / "track.tsv", sep="\t")
@@ -543,9 +547,9 @@ t3 = []
 tt = tests.set_index(["comparison", "definition"])
 r0 = tt.loc[("ISS root-zone quadrants vs field cultivars", "canonical")]
 t3.append(["Primary", "Canonical genera, ISS quadrants vs field cultivars", r0.positive, f"Fisher p = {r0.Fisher_p:.3f}"])
-t3.append(["Secondary", "Canonical genera, cluster relative abundance", "", f"exact MWU p = {r0.MWU_exact_p:.3f} ^b^"])
+t3.append(["Secondary", "Canonical genera, cluster relative abundance", "—", f"exact MWU p = {r0.MWU_exact_p:.3f} ^a^"])
 r1 = tt.loc[("ISS root-zone quadrants vs field cultivars", "canonical+AOA")]
-t3.append(["Sensitivity", "Canonical genera plus cultured AOA genera", r1.positive, f"Fisher p = {r1.Fisher_p:.3f}; MWU p = {r1.MWU_exact_p:.3f}"])
+t3.append(["Sensitivity", "Canonical genera plus cultured AOA genera (AOA not comparably assayed) ^b^", r1.positive, f"Fisher p = {r1.Fisher_p:.3f}; MWU p = {r1.MWU_exact_p:.3f}"])
 r2 = tt.loc[("ISS root-zone quadrants vs field cultivars", "broad")]
 t3.append(["Secondary", "Nitrifier lineages, ISS quadrants vs field cultivars", r2.positive, f"Fisher p = {r2.Fisher_p:.2f}; MWU p = {r2.MWU_exact_p:.3f}"])
 r3 = tt.loc[("ISS arcillite quadrants vs field cultivars (substrate vs soil)", "broad")]

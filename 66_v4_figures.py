@@ -79,8 +79,8 @@ def plant(cx, base, h, s=1.0):
 
 # plan view
 x0, y0, side = 3, 14, 29
-ax.text(x0 + side / 2, y0 + side + 6.2, "Plan view", ha="center", fontsize=7.4, fontweight="bold")
-ax.text(x0 + side / 2, y0 + side + 2.4, "four independently controlled quadrants", ha="center", fontsize=6.8, color="#555555")
+ax.text(x0 + side / 2, y0 + side + 9.0, "Plan view", ha="center", fontsize=7.4, fontweight="bold")
+ax.text(x0 + side / 2, y0 + side + 5.4, "four independently controlled quadrants", ha="center", fontsize=6.8, color="#555555")
 ax.add_patch(Rectangle((x0, y0), side, side, facecolor="white", edgecolor="#555555", lw=1.0))
 ax.plot([x0 + side / 2, x0 + side / 2], [y0, y0 + side], color="#555555", lw=1.0)
 ax.plot([x0, x0 + side], [y0 + side / 2, y0 + side / 2], color="#555555", lw=1.0)
@@ -93,8 +93,8 @@ ax.text(x0 + side / 2, y0 - 3.4, "one plant per quadrant\nafter thinning on day 
 
 # cross-section of one quadrant
 cx0, cw = 44, 17
-ax.text(cx0 + cw / 2, y0 + side + 6.2, "Cross-section of one quadrant", ha="center", fontsize=7.4, fontweight="bold")
-ax.text(cx0 + cw / 2, y0 + side + 2.4, "red labels mark what was sequenced", ha="center", fontsize=6.8, color="#555555")
+ax.text(cx0 + cw / 2, y0 + side + 9.0, "Cross-section of one quadrant", ha="center", fontsize=7.4, fontweight="bold")
+ax.text(cx0 + cw / 2, y0 + side + 5.4, "red labels mark what was sequenced", ha="center", fontsize=6.8, color="#555555")
 layers = [("arcillite substrate\nwith roots", 23.0, 13.5, C_SUB),
           ("germination wick", 18.0, 5.0, C_HW),
           ("foam", 13.0, 5.0, C_HW),
@@ -163,16 +163,19 @@ fig, ax = plt.subplots(figsize=(7.0, 3.6))
 for i, (u, lab, c) in enumerate(order):
     if u == "OSD-65":
         ra, cra = osd65_ra, osd65_can
+        shown = ra.index
     else:
         sel = groups.unit == u
-        if u == "Lettuce Ground":
-            sel &= groups.reads >= 100000
         ra, cra = groups.loc[sel, "RA"], groups.loc[sel, "canRA"]
+        # the two shallow lettuce ground libraries (203 and 279 reads) carry no information and are not plotted,
+        # but the counts printed above the panel cover every sample of the group, as Table 2 does
+        shown = groups.index[sel & (groups.reads >= 100000)] if u == "Lettuce Ground" else ra.index
     k, n, kc = int((ra > 0).sum()), len(ra), int((cra > 0).sum())
-    x = i + rng.uniform(-0.2, 0.2, n)
-    y = ra.clip(lower=floor).to_numpy()
+    rap, crap = ra.loc[shown], cra.loc[shown]
+    x = i + rng.uniform(-0.2, 0.2, len(rap))
+    y = rap.clip(lower=floor).to_numpy()
     ax.scatter(x, y, s=16, color=c, alpha=0.85, edgecolor="white", linewidth=0.3, zorder=3)
-    hit = (cra > 0).to_numpy()
+    hit = (crap > 0).to_numpy()
     ax.scatter(x[hit], y[hit], s=34, facecolor="none", edgecolor="black", linewidth=0.7, zorder=4)
     ax.text(i, 1.13, f"{k}/{n}", ha="center", fontsize=7, fontweight="bold" if k == 0 else "normal", transform=ax.get_xaxis_transform())
     ax.text(i, 1.04, f"{kc}/{n}", ha="center", fontsize=7, fontweight="bold" if kc == 0 else "normal", transform=ax.get_xaxis_transform())
