@@ -119,6 +119,10 @@ def pois(x, n):
     return lo, hi
 
 
+def sig(v, n=3):  # fold differences move with the bootstrap seed, so they are reported to three significant figures
+    return f"{float(f'{v:.{n}g}'):,.0f}"
+
+
 # ------------------------------------------------------------------ detection by unit and definition
 rows = []
 for uname, sel in UNITS.items():
@@ -242,12 +246,14 @@ boot = pd.DataFrame(boot_rows)
 boot.to_csv(OUT / "cluster_bootstrap.tsv", sep="\t", index=False)
 bb = boot.set_index("definition")
 note("boot_rz_broad_CI", f"{bb.loc['broad', 'ISS_root_zone_pooled_RA_2.5']:.2e}-{bb.loc['broad', 'ISS_root_zone_pooled_RA_97.5']:.2e}")
-note("boot_fold_broad_lower", bb.loc["broad", "fold_field_over_ISS_2.5"], "2.5th percentile of field/ISS pooled RA ratio")
+bfl = bb.loc["broad", "fold_field_over_ISS_2.5"]
+note("boot_fold_broad_lower", bfl, f"2.5th percentile of field/ISS pooled RA ratio; {sig(bfl)} to three significant figures")
 note("rz_canonical_per_quadrant_upper", f"{bb.loc['canonical', 'per_quadrant_upper_min']:.2e}-{bb.loc['canonical', 'per_quadrant_upper_max']:.2e}")
 note("fold_field_canonical_vs_quadrant_upper", f"{fd.pooled_RA / bb.loc['canonical', 'per_quadrant_upper_max']:.0f}-{fd.pooled_RA / bb.loc['canonical', 'per_quadrant_upper_min']:.0f}")
 b_rz, b_fd = D("ISS root zone", "broad"), D("Field pepper rhizosphere", "broad")
-note("fold_field_vs_rz_broad_point", b_fd.pooled_RA / b_rz.pooled_RA)
-note("fold_field_vs_rz_broad_refined_point", D("Field pepper rhizosphere", "broad-refined").pooled_RA / D("ISS root zone", "broad-refined").pooled_RA)
+note("fold_field_vs_rz_broad_point", b_fd.pooled_RA / b_rz.pooled_RA, f"{sig(b_fd.pooled_RA / b_rz.pooled_RA)} to three significant figures")
+fr = D("Field pepper rhizosphere", "broad-refined").pooled_RA / D("ISS root zone", "broad-refined").pooled_RA
+note("fold_field_vs_rz_broad_refined_point", fr, f"{sig(fr)} to three significant figures")
 note("fold_field_vs_arcillite_broad", b_fd.pooled_RA / arc.pooled_RA, "matched substrate vs soil")
 rs = D("ISS root-substrate", "broad")
 note("rootsubstrate_broad", f"{rs.pos1}/{rs.n}; reads {rs.nit_reads}/{rs.pooled_reads}; RA {rs.pooled_RA:.2e}; fold field {b_fd.pooled_RA / rs.pooled_RA:.0f}")
@@ -406,6 +412,26 @@ note("shared_ISSpepper_field_ISSread_share", ft.loc[pres(iss_all) & pres(fd_s.in
 note("shared_ISSpepper_field_fieldread_share", ft.loc[pres(iss_all) & pres(fd_s.index), fd_s.index].sum().sum() / ft[fd_s.index].sum().sum())
 note("shared_ISSpepper_lettuce", int((pres(iss_all) & pres(let)).sum()))
 note("shared_rootzone_field", int((pres(rz_s.index) & pres(fd_s.index)).sum()))
+car = groups.index[UNITS["ISS carrier, all 75"]]  # excludes the 34 plant-tissue and seed libraries, which are only screened
+note("shared_carrier_field", int((pres(car) & pres(fd_s.index)).sum()), "75 carrier samples only")
+note("shared_carrier_field_ISSread_share", ft.loc[pres(car) & pres(fd_s.index), car].sum().sum() / ft[car].sum().sum())
+note("shared_carrier_field_fieldread_share", ft.loc[pres(car) & pres(fd_s.index), fd_s.index].sum().sum() / ft[fd_s.index].sum().sum())
+note("shared_carrier_lettuce", int((pres(car) & pres(let)).sum()), "75 carrier samples only")
+
+# cluster-level prevalence: the sample-level intervals of Table 2 treat samples within a quadrant or cultivar as independent
+for uname in ["ISS root zone", "ISS arcillite", "Field pepper rhizosphere"]:
+    cg = groups[UNITS[uname]].groupby("quadrant")
+    for d in ["canonical", "broad"]:
+        s = cg[d].sum()
+        kk, nn = int((s > 0).sum()), len(s)
+        clo, chi = cp(kk, nn)
+        note(f"cluster_prev|{uname}|{d}", f"{kk}/{nn} ({clo * 100:.1f}-{chi * 100:.1f}%)",
+             "Clopper-Pearson; unit = growth quadrant (ISS) or cultivar (field)")
+
+# sequencing batches: run and lane are absent from the deposited metadata, so the index in each library name is the only clue
+sidx = groups.index[groups.study == "OSD-772"].str.extract(r"_(S\d+)_", expand=False).dropna()
+note("OSD772_sample_indices", f"{sidx.nunique()} distinct indices across {len(sidx)} libraries; at least "
+     f"{-(-len(sidx) // sidx.nunique())} sequencing batches", "run and lane not deposited")
 gen = tax.str.extract(r"g__([^;]+)")[0].fillna("unassigned")
 gen = gen.where(~gen.str.startswith("uncultured"), "uncultured")
 for u in ["ISS root zone", "ISS arcillite", "Field pepper rhizosphere"]:
@@ -464,26 +490,43 @@ n_carrier = nq * quadrants
 urine = (7, 16)  # g N per crew member per day (Verbeelen et al. 2021)
 mol = tuple(u / 14.007 for u in urine)
 koh = tuple(m * 56.11 for m in mol)
+koh_yr = tuple(k * 4 * 365 / 1000 for k in koh)  # kg KOH per year for a crew of four
 c3 = tuple(u / 1350 * 1000 for u in urine)  # L bed at 1.35 kg N m-3 d-1 loading (MELiSSA C-III)
 mabr = tuple(u * 0.5 / 1.8 for u in urine)  # m2 membrane, half the N nitrified at 1.8 g N m-2 d-1 (Udert & Waechter 2012)
+mabr_full = tuple(u / 1.8 for u in urine)   # the same reactor sized for full nitrification, to match the alkalinity row
+o2_n = 2 * 31.998 / 14.007                  # g O2 per g NH4+-N: NH4+ + 2 O2 -> NO3- + 2 H+ + H2O
+o2_crew = tuple(u * o2_n for u in urine)
+o2_rz = nh4 * quadrants / area / days * o2_n  # g O2 m-2 d-1 at the PH-04 ammonium supply rate
+nh4_day = nh4 / days * 1000                   # mg NH4+-N released per quadrant per day
+pore = (0.5, 1.0)                             # L of water per quadrant, assumed: pore water was never sampled
 def tan_for_fa(fa, ph, t=25):  # Anthonisen et al. 1976: FA (mg NH3 L-1) = 17/14 * TAN * 10^pH / (exp(6344/(273+T)) + 10^pH)
     return fa * 14 / 17 * (math.exp(6344 / (273 + t)) + 10 ** ph) / 10 ** ph
 doublings = math.log2(b_fd.pooled_RA / b_rz.pooled_RA)
+doublings_arc = math.log2(b_fd.pooled_RA / arc.pooled_RA)  # from the substrate level that every quadrant did hold
 budget = pd.DataFrame([
-    ("PH-04 fertiliser N per quadrant", f"{nq:.2f} g N ({nh4:.2f} g NH4+-N, {nh4 / nq:.0%}; {no3:.2f} g NO3−-N)", "Khodadad et al. 2026 Table 1; product labels"),
-    ("PH-04 fertiliser N per science carrier", f"{n_carrier:.1f} g N on {area} m² = {n_carrier / area:.0f} g N m⁻² per crop cycle ({n_carrier / area / days:.2f} g N m⁻² d⁻¹ over {days} d)", "4 quadrants; APH growing area 0.2 m² (Massa et al. 2016)"),
+    ("PH-04 fertiliser N per quadrant", f"{nq:.2f} g N ({nh4:.2f} g NH~4~^+^-N, {nh4 / nq:.0%}; {no3:.2f} g NO~3~^−^-N)", "Khodadad et al. 2026 Table 1; product labels"),
+    ("PH-04 fertiliser N per science carrier", f"{n_carrier:.1f} g N on {area} m^2^ = {n_carrier / area:.0f} g N m^−2^ per crop cycle ({n_carrier / area / days:.2f} g N m^−2^ d^−1^ over {days} d)", "4 quadrants; APH growing area 0.2 m^2^ (Massa et al. 2016)"),
     ("Crew urine N", f"{urine[0]}–{urine[1]} g N per crew member per day = {urine[0] / n_carrier:.1f}–{urine[1] / n_carrier:.1f} PH-04 carrier loads per crew-day", "Verbeelen et al. 2021"),
-    ("Crop area whose PH-04 fertiliser N equals one crew member's daily urine N (supply-side equivalence; lower bound on the area needed)", f"{urine[0] / (n_carrier / area / days):.0f}–{urine[1] / (n_carrier / area / days):.0f} m²", "derived; crop uptake not measured"),
-    ("Alkalinity", f"Ureolysis releases ≈1 eq base per mol N; nitrification consumes 2. Without added base about half of the ammonium is oxidised (NH4+:NO3− ≈ 1:1); full nitrification needs ≈{mol[0]:.1f}–{mol[1]:.1f} mol base per crew-day (≈{koh[0]:.0f}–{koh[1]:.0f} g KOH)", "stoichiometry; Udert & Wächter 2012"),
-    ("Upstream reactor size per crew member", f"MELiSSA C-III fixed bed at ≤1.35 kg N m⁻³ d⁻¹: ≈{c3[0]:.0f}–{c3[1]:.0f} L of bed; urine MABR at 1.8 g N m⁻² d⁻¹ (half nitrified): ≈{mabr[0]:.0f}–{mabr[1]:.0f} m² of membrane", "Verbeelen et al. 2021; Gòdia et al. 2002; Udert & Wächter 2012"),
-    ("NOB inhibition by free ammonia (0.1–1.0 mg NH3 L⁻¹)", f"total ammonium ≈{tan_for_fa(0.1, 7.0):.0f}–{tan_for_fa(1.0, 7.0):.0f} mg N L⁻¹ at pH 7.0; ≈{tan_for_fa(0.1, 7.5):.0f}–{tan_for_fa(1.0, 7.5):.0f} at pH 7.5 (25 °C)", "Anthonisen et al. 1976"),
-    ("Start-up from the observed root-zone level to the field level", f"{b_fd.pooled_RA / b_rz.pooled_RA:,.0f}-fold ≈ {doublings:.0f} doublings; {doublings * math.log(2) / 0.5:.0f}–{doublings * math.log(2) / 0.1:.0f} d at net growth 0.5–0.1 d⁻¹ (cycle: {days} d)", "relative abundance as proxy; Prosser 1989"),
+    ("Crop area whose PH-04 fertiliser N equals one crew member's daily urine N (supply-side equivalence; lower bound on the area needed)", f"{urine[0] / (n_carrier / area / days):.0f}–{urine[1] / (n_carrier / area / days):.0f} m^2^", "derived; crop uptake not measured"),
+    ("Alkalinity", f"Ureolysis releases ≈1 eq base per mol N; nitrification consumes 2. Without added base about half of the ammonium is oxidised (NH~4~^+^:NO~3~^−^ ≈ 1:1); full nitrification needs ≈{mol[0]:.1f}–{mol[1]:.1f} mol base per crew-day (≈{koh[0]:.0f}–{koh[1]:.0f} g KOH, {koh_yr[0]:.0f}–{koh_yr[1]:.0f} kg per year for a crew of four). Assimilation of that nitrate by the crop returns ≈1 eq base per mol N, so in a closed loop much of it is recovered and the figure is an upper bound on make-up base", "stoichiometry; Udert & Wächter 2012"),
+    ("Oxygen demand of nitrification", f"{o2_n:.2f} g O~2~ per g NH~4~^+^-N = {o2_crew[0]:.0f}–{o2_crew[1]:.0f} g O~2~ per crew-day for urine N, which is ammoniacal after ureolysis; ≈{o2_rz:.1f} g O~2~ m^−2^ d^−1^ at the PH-04 ammonium supply rate", "stoichiometry (2 mol O~2~ per mol N); crew urine N above"),
+    ("Upstream reactor size per crew member", f"MELiSSA C-III fixed bed at ≤1.35 kg N m^−3^ d^−1^: ≈{c3[0]:.0f}–{c3[1]:.0f} L of bed; urine membrane-aerated biofilm reactor (MABR) at 1.8 g N m^−2^ d^−1^: ≈{mabr[0]:.0f}–{mabr[1]:.0f} m^2^ of membrane for the half nitrification of the row above, ≈{mabr_full[0]:.0f}–{mabr_full[1]:.0f} m^2^ if all of the nitrogen is oxidised", "Verbeelen et al. 2021; Gòdia et al. 2002; Udert & Wächter 2012"),
+    ("NOB inhibition by free ammonia (0.1–1.0 mg NH~3~ L^−1^)", f"total ammonium ≈{tan_for_fa(0.1, 7.0):.0f}–{tan_for_fa(1.0, 7.0):.0f} mg N L^−1^ at pH 7.0; ≈{tan_for_fa(0.1, 7.5):.0f}–{tan_for_fa(1.0, 7.5):.0f} at pH 7.5 (25 °C)", "Anthonisen et al. 1976"),
+    ("PH-04 root-zone ammonium against that threshold", f"{nh4:.2f} g NH~4~^+^-N per quadrant over {days} d ≈ {nh4_day:.0f} mg N d^−1^; one day of that release is {nh4_day / pore[1]:.0f}–{nh4_day / pore[0]:.0f} mg N L^−1^ in the water the substrate holds, the lower edge of the band above", "derived; {}–{} L of retained water per quadrant assumed, since pore water was never sampled".format(*pore)),
+    ("Net growth implied by the gap to the field level", f"{sig(b_fd.pooled_RA / b_rz.pooled_RA)}-fold from the root-zone level ≈ {doublings:.0f} doublings, {sig(b_fd.pooled_RA / arc.pooled_RA)}-fold from the arcillite level ≈ {doublings_arc:.1f}. Neither gap was closed in the {days} d cycle, so net growth stayed below {doublings * math.log(2) / days:.3f} d^−1^ and {doublings_arc * math.log(2) / days:.3f} d^−1^ respectively (doubling times above {days / doublings:.0f} d and {days / doublings_arc:.0f} d)", "relative abundance as proxy; Prosser 1989"),
 ], columns=["Quantity", "Value", "Basis"])
 budget.to_csv(OUT / "table4_nitrogen_budget.tsv", sep="\t", index=False)
 t100 = fert[fert["product"] == "Nutricote 14-4-14 (T100)"]  # its label could not be retrieved; the T180 split is assumed for it
 nh4_lo = nh4 - (t100.g_per_quadrant * t100.NH4N_frac).sum()                                       # T100 nitrogen all nitrate
 nh4_hi = nh4_lo + (t100.g_per_quadrant * t100.N_frac).sum()                                       # T100 nitrogen all ammoniacal
 note("fert_N_quadrant", nq); note("fert_NH4_share", nh4 / nq); note("doublings", doublings)
+note("doublings_from_arcillite", doublings_arc)
+note("net_growth_upper_rz", f"{doublings * math.log(2) / days:.3f} d-1 (doubling {days / doublings:.1f} d)", "root-zone level to field level, not reached in 137 d")
+note("net_growth_upper_arcillite", f"{doublings_arc * math.log(2) / days:.3f} d-1 (doubling {days / doublings_arc:.1f} d)", "arcillite level to field level")
+note("alkalinity_KOH_per_year_crew4", f"{koh_yr[0]:.0f}-{koh_yr[1]:.0f} kg KOH")
+note("O2_per_N", f"{o2_n:.2f} g O2 per g N"); note("O2_crew_day", f"{o2_crew[0]:.0f}-{o2_crew[1]:.0f} g O2 per crew-day")
+note("O2_rootzone_areal", f"{o2_rz:.2f} g O2 m-2 d-1", "at the PH-04 ammonium supply rate")
+note("rz_NH4_release_per_quadrant_day", f"{nh4_day:.1f} mg N d-1")
 note("fert_NH4_share_range_if_T100_label_differs", f"{nh4_lo / nq:.0%}-{nh4_hi / nq:.0%}")
 
 # ------------------------------------------------------------------ manuscript tables
@@ -547,13 +590,13 @@ t3 = []
 tt = tests.set_index(["comparison", "definition"])
 r0 = tt.loc[("ISS root-zone quadrants vs field cultivars", "canonical")]
 t3.append(["Primary", "Canonical genera, ISS quadrants vs field cultivars", r0.positive, f"Fisher p = {r0.Fisher_p:.3f}"])
-t3.append(["Secondary", "Canonical genera, cluster relative abundance", "—", f"exact MWU p = {r0.MWU_exact_p:.3f} ^a^"])
+t3.append(["Secondary", "Canonical genera, cluster relative abundance", "—", f"exact Mann–Whitney U p = {r0.MWU_exact_p:.3f} ^a^"])
 r1 = tt.loc[("ISS root-zone quadrants vs field cultivars", "canonical+AOA")]
-t3.append(["Sensitivity", "Canonical genera plus cultured AOA genera (AOA not comparably assayed) ^b^", r1.positive, f"Fisher p = {r1.Fisher_p:.3f}; MWU p = {r1.MWU_exact_p:.3f}"])
+t3.append(["Sensitivity", "Canonical genera plus cultured AOA genera (AOA not comparably assayed) ^b^", r1.positive, f"Fisher p = {r1.Fisher_p:.3f}; Mann–Whitney U p = {r1.MWU_exact_p:.3f}"])
 r2 = tt.loc[("ISS root-zone quadrants vs field cultivars", "broad")]
-t3.append(["Secondary", "Nitrifier lineages, ISS quadrants vs field cultivars", r2.positive, f"Fisher p = {r2.Fisher_p:.2f}; MWU p = {r2.MWU_exact_p:.3f}"])
+t3.append(["Secondary", "Nitrifier lineages, ISS quadrants vs field cultivars", r2.positive, f"Fisher p = {r2.Fisher_p:.2f}; Mann–Whitney U p = {r2.MWU_exact_p:.3f}"])
 r3 = tt.loc[("ISS arcillite quadrants vs field cultivars (substrate vs soil)", "broad")]
-t3.append(["Secondary", "Nitrifier lineages, ISS arcillite quadrants vs field cultivars", r3.positive, f"Fisher p = {r3.Fisher_p:.2f}; MWU p = {r3.MWU_exact_p:.3f}"])
+t3.append(["Secondary", "Nitrifier lineages, ISS arcillite quadrants vs field cultivars", r3.positive, f"Fisher p = {r3.Fisher_p:.2f}; Mann–Whitney U p = {r3.MWU_exact_p:.3f}"])
 wa = wq.set_index("comparison").loc["Arcillite vs root zone"]
 t3.append(["Secondary", "Nitrifier lineages, arcillite vs root zone within quadrants", f"{wa.pairs_comp_higher} quadrants higher in arcillite",
            f"sign test p = {wa.sign_one_sided_p:.4f} one-sided ({wa.sign_two_sided_p:.3f} two-sided); positive quadrants {wa.positive_quadrants}, Fisher p = {wa.Fisher_quadrants_p:.2f}"])
